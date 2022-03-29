@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Projet_mobile</string>
+    <string-array name="etats">
+        <item>fermé</item>
+        <item>ouvert</item>
+        <item>ouvert</item>
+        <item>fermé</item>
+    </string-array>
+
+    <string-array name="occupation">
+        <item>90%</item>
+        <item>35%</item>
+        <item>47%</item>
+        <item>12%</item>
+    </string-array>
+
+    <string-array name="nom">
+        <item>Parking du marché</item>
+        <item>Parking P14</item>
+        <item>Paking communal 100 places</item>
+        <item>Parking H400</item>
+    </string-array>
+
+    <string-array name="commune">
+        <item>Bab Ezzeouar</item>
+        <item>Dar LBeida</item>
+        <item>Bab Ezzeouar</item>
+        <item>Dar LBeida</item>
+    </string-array>
+
+    <string-array name="distance">
+        <item>8,56 Km</item>
+        <item>12.4 Km</item>
+        <item>7,92 Km</item>
+        <item>12,7 Km</item>
+    </string-array>
+
+    <string-array name="temps_trajet">
+        <item>14 min</item>
+        <item>17 min</item>
+        <item>12 min</item>
+        <item>16 min</item>
+    </string-array>
+
+</resources>
