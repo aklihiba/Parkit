@@ -29,7 +29,8 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
         holder.temps_trajet.text = currentItem.temps
 
         if(holder.etat.text == "ouvert"){
-            holder.etat.setTextColor( R.color.green)
+            holder.etat.setTextColor(R.color.green)
+            holder.occupation.setTextColor(R.color.green)
         }
     }
 

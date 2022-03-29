@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
 
         arrayList = arrayListOf<Parking>()
+
         getData()
     }
 
