@@ -16,3 +16,4 @@ rootProject.name = "Projet_mobile"
 include ':app'
 include ':app:tasks'
 include ':taskslist'
+include ':parkit'

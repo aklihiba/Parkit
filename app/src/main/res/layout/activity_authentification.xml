@@ -14,17 +14,32 @@
         android:layout_height="360dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644"
+
         app:srcCompat="@drawable/List_bg" />
 
     <Button
         android:id="@+id/inscription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="s'inscrir"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="325dp" />
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:text="s'inscrire"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/connexion"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/yellow"
+        android:text="se connecter"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/inscription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

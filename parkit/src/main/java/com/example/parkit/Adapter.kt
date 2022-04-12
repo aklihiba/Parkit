@@ -1,4 +1,4 @@
-package com.example.projet_mobile
+package com.example.parkit
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -31,17 +31,17 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
     }
 
     override fun getItemCount(): Int {
-       return parkingList.size
+        return parkingList.size
     }
 
 }
-class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
-    val parking_image : ShapeableImageView = itemView.findViewById(R.id.parking_image)
-    val etat : TextView = itemView.findViewById(R.id.etat)
-    val occupation : TextView = itemView.findViewById(R.id.occupation)
-    val nom : TextView = itemView.findViewById(R.id.nom)
-    val adresse : TextView = itemView.findViewById(R.id.adresse)
-    val distance : TextView = itemView.findViewById(R.id.distance)
-    val temps_trajet : TextView = itemView.findViewById(R.id.temps_trajet)
+    val parking_image: ShapeableImageView = itemView.findViewById(R.id.parking_image)
+    val etat: TextView = itemView.findViewById(R.id.etat)
+    val occupation: TextView = itemView.findViewById(R.id.occupation)
+    val nom: TextView = itemView.findViewById(R.id.nom)
+    val adresse: TextView = itemView.findViewById(R.id.adresse)
+    val distance: TextView = itemView.findViewById(R.id.distance)
+    val temps_trajet: TextView = itemView.findViewById(R.id.temps_trajet)
 }
