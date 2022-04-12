@@ -2,125 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:elevation="8dp"
-    android:minWidth="100dp"
+    android:background="@color/bg"
     android:textAlignment="inherit"
     tools:context=".authentification">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="412dp"
-        android:layout_height="208dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/top_gb" />
-
-
-    <TextView
-        android:id="@+id/text_connexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-
-        android:elegantTextHeight="true"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="login"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#3E3E3E"
-        android:textFontWeight="900"
-        android:textSize="34sp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="306dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="284dp"
-        android:background="@drawable/textfieldbg"
-        android:elevation="3dp"
-        android:ems="10"
-
-        android:hint="e-mail"
-        android:inputType="textEmailAddress"
-        android:paddingStart="10dp"
-        android:textColor="@color/cardview_dark_background"
-        android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="280dp"
-        android:background="@drawable/roundall"
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.512" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="306dp"
-        android:layout_height="65dp"
-        android:background="@drawable/passwordbg"
-        android:elevation="3dp"
-        android:ems="10"
-
-        android:hint="password"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:textColor="@color/cardview_dark_background"
-        android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="411dp"
-        android:layout_height="105dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:id="@+id/imageView"
+        android:layout_width="350dp"
+        android:layout_height="360dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644"
+        app:srcCompat="@drawable/List_bg" />
 
-        app:srcCompat="@drawable/bottom_bg" />
-
-    <ImageView
-        android:id="@+id/imageView7"
+    <Button
+        android:id="@+id/inscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-        app:layout_constraintStart_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:srcCompat="?android:attr/textCheckMark" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="193dp"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:text="s'inscrir"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="325dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

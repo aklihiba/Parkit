@@ -3,11 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/List_bg.xml" value="0.2505" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/passwordbg.xml" value="0.1415" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/roundall.xml" value="0.2595" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/top_gb.xml" value="0.2015" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/voiture.xml" value="0.136" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/activity_authentification.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/activity_parking_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/fragment_auth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/list_item.xml" value="0.5972222222222222" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/tasks/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/taskslist/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/taskslist/src/main/res/layout/fragment_list.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
