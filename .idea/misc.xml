@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/List_bg.xml" value="0.2505" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/bottom_bg.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/button_bg.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/list_bg.xml" value="0.2595" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/passwordbg.xml" value="0.1415" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/roundall.xml" value="0.2595" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/roundall_blue.xml" value="0.171" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/roundright.xml" value="0.171" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/textfieldbg.xml" value="0.124" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/top_gb.xml" value="0.2015" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/drawable/voiture.xml" value="0.136" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/activity_authentification.xml" value="0.2" />
@@ -16,9 +20,16 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/fragment_auth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/src/main/res/layout/list_item.xml" value="0.5972222222222222" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/app/tasks/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/Card_tile.xml" value="0.2595" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/button.xml" value="0.124" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/card_tile.xml" value="0.124" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/list_bg.xml" value="0.124" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/parking_img_shape.xml" value="0.124" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/round_top_bg.xml" value="0.124" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/fragment_main_parking.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/button_bg.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/fragment_main_parking.xml" value="0.264" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/layout/list_item.xml" value="0.176" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2595" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/taskslist/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />

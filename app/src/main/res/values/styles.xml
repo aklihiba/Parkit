@@ -1,7 +1,0 @@
-<resources>
-
-    <style name="Widget.Theme.Projet_mobile.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/bg</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
-    </style>
-</resources>

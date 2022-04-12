@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  res/drawable/edittext_rounded_corners.xml -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_enabled="true">
 
         <shape>
-            <solid android:color="#FFFFFF"
+            <solid android:color="@color/bg"
                 />
+
             <corners
-                android:topRightRadius="100dp"
-                android:bottomRightRadius="100dp"
+                android:topRightRadius="50dp"
+                android:topLeftRadius="50dp"
                 />
 
         </shape>

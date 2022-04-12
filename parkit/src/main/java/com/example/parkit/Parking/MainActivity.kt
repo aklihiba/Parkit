@@ -1,9 +1,11 @@
-package com.example.parkit
+package com.example.parkit.Parking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.parkit.Adapter
+import com.example.parkit.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +23,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        images = arrayOf(R.drawable.parking1, R.drawable.parking2, R.drawable.parking3, R.drawable.parking4,R.drawable.parking1, R.drawable.parking2, R.drawable.parking3, R.drawable.parking4)
+        images = arrayOf(
+            R.drawable.parking1,
+            R.drawable.parking2,
+            R.drawable.parking3,
+            R.drawable.parking4,
+            R.drawable.parking1,
+            R.drawable.parking2,
+            R.drawable.parking3,
+            R.drawable.parking4
+        )
         etats = arrayOf("fermé","ouvert","fermé","ouvert","fermé","ouvert","fermé","ouvert")
         occupations = arrayOf("90%","35%","47%","12%","90%","35%","47%","12%")
         noms = arrayOf("Parking du marché", "Parking P14","Paking communal 100 places", "Parking H400", "Parking du marché", "Parking P14","Paking communal 100 places", "Parking H400")

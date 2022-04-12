@@ -5,12 +5,14 @@
     android:id="@+id/cadre"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:background="@drawable/card_tile"
+    android:layout_margin="10dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/parking_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/parking1"
