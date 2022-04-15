@@ -14,8 +14,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class parking_list : Fragment() {
-    private lateinit var recyclerView: RecyclerView
+    private  var recyclerView: RecyclerView? = null
     private lateinit var arrayList: ArrayList<Parking>
+
     lateinit var images  :Array<Int>
     lateinit var etats : Array<String>
     lateinit var occupations : Array<String>
@@ -23,34 +24,35 @@ class parking_list : Fragment() {
     lateinit var adresses : Array<String>
     lateinit var distances : Array<String>
     lateinit var temps_trajets : Array<String>
+    lateinit var latitude : Array<Double>
+    lateinit var longitude : Array<Double>
+    lateinit var h_ouv : Array<String>
+    lateinit var h_ferm : Array<String>
+    lateinit var tarif : Array<Double>
+    lateinit var note : Array<Double>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View ?{
         val _view = inflater.inflate(R.layout.fragment_parking_list, container, false)
-        var sheet = requireActivity().findViewById(R.id.sheet) as FrameLayout
-        BottomSheetBehavior.from(sheet).apply{
-            peekHeight = 200
-            this.state = BottomSheetBehavior.STATE_COLLAPSED
+
+        var sheet = requireActivity().findViewById(R.id.sheet) as? FrameLayout
+        if(sheet != null){
+
+            BottomSheetBehavior.from(sheet).apply{
+                peekHeight = 200
+                this.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+            return _view
         }
-        return _view
+       return null
     }
 
-    private fun getData(){
-        for (i in images.indices){
-            val parking = Parking(images[i],etats[i],occupations[i],noms[i],adresses[i],distances[i],temps_trajets[i])
-            arrayList.add(parking)
-        }
-
-        recyclerView.adapter = Adapter(arrayList)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         images = arrayOf(
             R.drawable.parking1,
             R.drawable.parking2,
@@ -67,15 +69,30 @@ class parking_list : Fragment() {
         adresses = arrayOf("Bab Ezzeouar","Dar LBeida","Bab Ezzeouar","Dar LBeida","Bab Ezzeouar","Dar LBeida","Bab Ezzeouar","Dar LBeida")
         distances = arrayOf("8,56 Km","12.4 Km","7,92 Km","12,7 Km","8,56 Km","12.4 Km","7,92 Km","12,7 Km")
         temps_trajets = arrayOf("14 min", "17 min","12 min","16 min","14 min", "17 min","12 min","16 min")
+        note = arrayOf<Double>(3.3, 4.2, 2.7, 5.0, 1.8,4.2, 2.7, 5.0, 1.8 )
+        tarif = arrayOf<Double>(100.0, 120.0,250.0, 150.0, 100.0, 120.0,250.0, 150.0)
+        h_ouv = arrayOf("08h00","09h00","10h00","07h00","08h00","09h00","10h00","07h00")
+        h_ferm = arrayOf("18h00","19h00","22h00","23h00","21h00","19h00","23h00","23h30")
+        latitude = arrayOf(36.679484,36.679484,36.679484,36.679484,36.679484,36.679484,36.679484,36.679484)
+        longitude = arrayOf(3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896)
 
-        recyclerView = requireActivity().findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)
+
+        recyclerView = view.findViewById(R.id.recyclerView) as? RecyclerView
+        recyclerView?.layoutManager = LinearLayoutManager(activity)
+
 
         arrayListOf<Parking>().also { arrayList = it }
 
         getData()
-
     }
 
+    private fun getData(){
+        for (i in images.indices){
+            val parking = Parking(images[i],latitude[i], longitude[i],etats[i],occupations[i],noms[i],adresses[i],distances[i],temps_trajets[i],note[i], h_ouv[i], h_ferm[i], tarif[i])
+            arrayList.add(parking)
+            print("added $i");
+        }
+
+        recyclerView?.adapter = Adapter(arrayList)
+    }
 }
