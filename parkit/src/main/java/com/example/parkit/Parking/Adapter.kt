@@ -1,17 +1,21 @@
 package com.example.parkit
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.telecom.Call
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
+import com.example.parkit.Parking.details
 import com.google.android.material.imageview.ShapeableImageView
 
-class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapter<ViewHolder>() {
+class Adapter(private val parkingList : ArrayList<Parking>, val context: Context): RecyclerView.Adapter<ViewHolder>() {
 
 
 
@@ -31,6 +35,14 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
         holder.distance.text = currentItem.distance
         holder.temps_trajet.text = currentItem.temps
         holder.score.rating = currentItem.note.toFloat()
+
+        //todo set onclick listner to open second fragment
+        holder.itemView.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+
+
+            }
+        })
     }
 
     override fun getItemCount(): Int {

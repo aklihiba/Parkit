@@ -37,22 +37,14 @@ class parking_list : Fragment() {
     ): View ?{
         val _view = inflater.inflate(R.layout.fragment_parking_list, container, false)
 
-        var sheet = requireActivity().findViewById(R.id.sheet) as? FrameLayout
-        if(sheet != null){
+        var sheet = requireActivity().findViewById(R.id.sheet) as FrameLayout
 
-            BottomSheetBehavior.from(sheet).apply{
-                peekHeight = 200
-                this.state = BottomSheetBehavior.STATE_COLLAPSED
-            }
-            return _view
+
+        BottomSheetBehavior.from(sheet).apply{
+            peekHeight = 200
+            this.state = BottomSheetBehavior.STATE_COLLAPSED
         }
-       return null
-    }
 
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         images = arrayOf(
             R.drawable.parking1,
             R.drawable.parking2,
@@ -77,14 +69,20 @@ class parking_list : Fragment() {
         longitude = arrayOf(3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896)
 
 
-        recyclerView = view.findViewById(R.id.recyclerView) as? RecyclerView
+        recyclerView = _view.findViewById(R.id.recyclerView) as? RecyclerView
         recyclerView?.layoutManager = LinearLayoutManager(activity)
 
 
         arrayListOf<Parking>().also { arrayList = it }
 
         getData()
+        return _view
+
     }
+
+
+
+
 
     private fun getData(){
         for (i in images.indices){
