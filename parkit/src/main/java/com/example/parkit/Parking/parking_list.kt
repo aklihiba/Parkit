@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Adapter
-
-
+import com.example.parkit.R
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class parking_list : Fragment() {
@@ -26,8 +27,14 @@ class parking_list : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment,container,false)
+    ): View {
+        val _view = inflater.inflate(R.layout.fragment_parking_list, container, false)
+        var sheet = requireActivity().findViewById(R.id.sheet) as FrameLayout
+        BottomSheetBehavior.from(sheet).apply{
+            peekHeight = 200
+            this.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
+        return _view
     }
 
     private fun getData(){

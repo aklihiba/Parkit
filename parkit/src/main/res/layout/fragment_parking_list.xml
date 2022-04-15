@@ -7,7 +7,7 @@
     tools:context=".Parking.parking_list">
 
     <FrameLayout
-        android:id="@+id/frameLayout2"
+        android:id="@+id/sheet"
         android:layout_width="match_parent"
         android:layout_height="540dp"
         android:visibility="visible"
@@ -30,15 +30,16 @@
                 android:layout_marginTop="10dp"/>
 
             <ImageView
+                android:id="@+id/dragbutton"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_gravity="center|top"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/yellow"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_remove_24"
-                android:visibility="visible"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="3dp">
+                android:visibility="visible">
 
             </ImageView>
 
