@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
@@ -28,7 +30,7 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
         holder.adresse.text = currentItem.adresse
         holder.distance.text = currentItem.distance
         holder.temps_trajet.text = currentItem.temps
-
+        holder.score.rating = currentItem.note.toFloat()
     }
 
     override fun getItemCount(): Int {
@@ -38,11 +40,12 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
 }
 class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
-    val parking_image: ShapeableImageView = itemView.findViewById(R.id.parking_image)
+    val parking_image: ImageView = itemView.findViewById(R.id.parking_image)
     val etat: TextView = itemView.findViewById(R.id.etat)
     val occupation: TextView = itemView.findViewById(R.id.occupation)
     val nom: TextView = itemView.findViewById(R.id.nom)
     val adresse: TextView = itemView.findViewById(R.id.adresse)
     val distance: TextView = itemView.findViewById(R.id.distance)
     val temps_trajet: TextView = itemView.findViewById(R.id.temps_trajet)
+    val score: RatingBar = itemView.findViewById(R.id.ratingBar)
 }
