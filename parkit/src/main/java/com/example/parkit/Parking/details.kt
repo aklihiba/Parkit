@@ -33,6 +33,17 @@ class details : Fragment() {
         val reserverButton = requireActivity().findViewById(R.id.reserver) as Button
         val gotoMaps = requireActivity().findViewById(R.id.gotoMaps) as FloatingActionButton
 
+        nom.text = ""
+        adresse.text =""
+        distance.text =""
+        temps_trajet.text=""
+        occupation.text=""
+        etat.text=""
+        score.rating = 0.0F
+        h_ouverture.text=""
+        h_fermeture.text=""
+        duree.text =""
+        tarif.text =""
 
         reserverButton.setOnClickListener(){
         TODO("add function reserver place de parking")
