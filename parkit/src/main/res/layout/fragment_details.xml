@@ -120,6 +120,7 @@
             android:progressBackgroundTint="@color/gris_clair"
             android:progressTint="@color/yellow"
             android:rating="2.2"
+            android:stepSize="0.1"
             app:layout_constraintBottom_toBottomOf="@+id/occupation"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -256,7 +257,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/gotoMaps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
