@@ -1,21 +1,18 @@
 package com.example.parkit
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.telecom.Call
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
-import com.example.parkit.Parking.details
-import com.google.android.material.imageview.ShapeableImageView
 
-class Adapter(private val parkingList : ArrayList<Parking>, val context: Context): RecyclerView.Adapter<ViewHolder>() {
+
+class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapter<ViewHolder>() {
 
 
 
@@ -24,7 +21,7 @@ class Adapter(private val parkingList : ArrayList<Parking>, val context: Context
         return ViewHolder(itemView)
     }
 
-    @SuppressLint("ResourceAsColor")
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = parkingList[position]
         holder.parking_image.setImageResource(currentItem.image)
@@ -36,22 +33,22 @@ class Adapter(private val parkingList : ArrayList<Parking>, val context: Context
         holder.temps_trajet.text = currentItem.temps
         holder.score.rating = currentItem.note.toFloat()
 
-        //todo set onclick listner to open second fragment
-        holder.itemView.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
+        holder.list_item.setOnClickListener {
+            print("hello $position")
+
+        }
 
 
-            }
-        })
     }
 
     override fun getItemCount(): Int {
         return parkingList.size
     }
 
+
 }
 class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-
+    val list_item : ConstraintLayout = itemView.findViewById(R.id.cadre)
     val parking_image: ImageView = itemView.findViewById(R.id.parking_image)
     val etat: TextView = itemView.findViewById(R.id.etat)
     val occupation: TextView = itemView.findViewById(R.id.occupation)
