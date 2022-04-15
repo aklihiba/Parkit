@@ -50,6 +50,22 @@ class details : Fragment() {
         }
         gotoMaps.setOnClickListener(){
         TODO("add function go to maps")
+        /*
+        * gotoMaps.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            val gmmIntentUri =
+  Uri.parse("google.navigation:q=@latitude,@longitude")
+val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+mapIntent.setPackage("com.google.android.apps.maps")
+startActivity(mapIntent)
+            }
+        }, 1000);
+    }
+});*/
         }
         TODO("getting serializable object")
         return inflater.inflate(R.layout.fragment_details, container, false)
