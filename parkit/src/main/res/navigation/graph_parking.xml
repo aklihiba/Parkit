@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/graph_parking">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_parking"
+    app:startDestination="@id/parking_list">
 
+    <fragment
+        android:id="@+id/parking_list"
+        android:name="com.example.parkit.Parking.ParkingList"
+        android:label="fragment_parking_list"
+        tools:layout="@layout/fragment_parking_list" >
+        <action
+            android:id="@+id/action_parking_list_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        android:name="com.example.parkit.Parking.Details"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 </navigation>

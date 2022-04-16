@@ -12,7 +12,7 @@ import com.example.parkit.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class details : Fragment() {
+class Details : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

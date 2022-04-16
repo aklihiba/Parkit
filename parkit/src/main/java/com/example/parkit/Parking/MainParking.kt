@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.parkit.R
 
 
-class main_parking : Fragment() {
+class MainParking : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
