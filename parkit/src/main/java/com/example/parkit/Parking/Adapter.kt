@@ -8,12 +8,12 @@ import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
 
 
-class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapter<ViewHolder>() {
-
+class Adapter(private val parkingList : ArrayList<Parking>, private val view :View): RecyclerView.Adapter<ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,8 +34,7 @@ class Adapter(private val parkingList : ArrayList<Parking>): RecyclerView.Adapte
         holder.score.rating = currentItem.note.toFloat()
 
         holder.list_item.setOnClickListener {
-            print("hello $position")
-
+            view.findNavController().navigate(R.id.action_parking_list_to_details)
         }
 
 
