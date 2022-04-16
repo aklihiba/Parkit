@@ -50,7 +50,7 @@
             android:layout_marginTop="12dp"
             android:text="Parking du marché"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,7 +61,7 @@
             android:layout_marginTop="12dp"
             android:text="Bab Ezzouar"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/nom"
             app:layout_constraintTop_toBottomOf="@+id/nom" />
 
@@ -72,7 +72,7 @@
             android:layout_marginTop="12dp"
             android:text="8,56 Km"
             android:textColor="@color/gris_clair"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/adresse"
             app:layout_constraintTop_toBottomOf="@+id/adresse" />
 
@@ -83,7 +83,7 @@
             android:layout_marginStart="36dp"
             android:text="14 min"
             android:textColor="@color/gris_clair"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/distance"
             app:layout_constraintStart_toEndOf="@+id/distance" />
 
@@ -94,7 +94,7 @@
             android:layout_marginStart="32dp"
             android:text="90%"
             android:textColor="@color/gris_clair"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/etat"
             app:layout_constraintStart_toEndOf="@+id/etat" />
 
@@ -106,7 +106,7 @@
             android:layout_marginBottom="14dp"
             android:text="ferme "
             android:textColor="@color/gris_clair"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/distance"
             app:layout_constraintTop_toBottomOf="@+id/distance" />
@@ -207,11 +207,15 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/button"
         android:text="reserver"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:iconTint="@color/white"
+
         app:layout_constraintBottom_toBottomOf="@+id/details_cards"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/tarif" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -27,7 +27,6 @@ class ParkingList : Fragment() {
 
         var sheet = requireActivity().findViewById(R.id.sheet) as? FrameLayout
 
-      //  viewModel = ViewModelProvider(requireActivity()).get(ParkingViewModel::class.java)
 
         if (sheet != null) {
             BottomSheetBehavior.from(sheet).apply{
@@ -36,7 +35,6 @@ class ParkingList : Fragment() {
             }
         }
 
-       // viewModel.getData()
         recyclerView = _view.findViewById(R.id.recyclerView) as? RecyclerView
         recyclerView?.layoutManager = LinearLayoutManager(activity)
         print("oncreate view parking list")

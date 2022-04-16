@@ -1,5 +1,7 @@
 package com.example.parkit.Parking
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,6 +22,7 @@ class Details : Fragment() {
 
     lateinit var  park : Parking
     lateinit var nom : TextView
+    lateinit var adresse :TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +31,7 @@ class Details : Fragment() {
         val _view = inflater.inflate(R.layout.fragment_details, container, false)
 
         nom= _view.findViewById(R.id.nom) //as? TextView
-        var adresse = _view.findViewById(R.id.adresse) as? TextView
+         adresse = _view.findViewById(R.id.adresse)
         var distance = _view.findViewById(R.id.distance) as? TextView
         var temps_trajet = _view.findViewById(R.id.temps_trajet) as? TextView
         var occupation = _view.findViewById(R.id.occupation) as? TextView
@@ -40,18 +43,12 @@ class Details : Fragment() {
         val reserverButton = _view.findViewById(R.id.reserver) as? Button
         val gotoMaps = _view.findViewById(R.id.gotoMaps) as? FloatingActionButton
         val image  = _view.findViewById(R.id.imageView) as? ImageView
-       // viewModel = ViewModelProvider(_view).get(ParkingViewModel::class.java)
         park = viewModel.getParking()
-        print("\n park selected ${park.nom}\n" +
-                "\n nom present dans tewxtvuew ${nom.text}")
         nom.setText(park.nom)
 
         if (image != null)
        {
            image.setImageResource(park.image)
-           print("\n \n $image\n\n")
-       }else {
-           print("IMAGE NULL PROBL IN GETTING VIEW")
        }
 
         if (adresse != null) {
@@ -91,28 +88,17 @@ class Details : Fragment() {
         }
         if (gotoMaps != null) {
             gotoMaps.setOnClickListener(){
-               // TODO("add function go to maps")
-                /*
-            * gotoMaps.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
                 val gmmIntentUri =
-      Uri.parse("google.navigation:q=@latitude,@longitude")
-    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-    mapIntent.setPackage("com.google.android.apps.maps")
-    startActivity(mapIntent)
-                }
-            }, 1000);
-        }
-    });*/
+                    Uri.parse("google.navigation:q=${park.latitude},${park.longitude}")
+                val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+                mapIntent.setPackage("com.google.android.apps.maps")
+                startActivity(mapIntent)
+
             }
         }
        // TODO("getting serializable object")
 
-        return inflater.inflate(R.layout.fragment_details, container, false)
+        return _view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
