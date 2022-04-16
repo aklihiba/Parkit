@@ -8,16 +8,19 @@ import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
+import com.example.parkit.Parking.ParkingList
 
 
-class Adapter(private val parkingList : ArrayList<Parking>, private val view :View): RecyclerView.Adapter<ViewHolder>() {
+class Adapter(private val parkingList : ArrayList<Parking>, private val view :View, private val frag :ParkingList): RecyclerView.Adapter<ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        frag.viewModel.getData()
         return ViewHolder(itemView)
     }
 
@@ -34,6 +37,9 @@ class Adapter(private val parkingList : ArrayList<Parking>, private val view :Vi
         holder.score.rating = currentItem.note.toFloat()
 
         holder.list_item.setOnClickListener {
+
+            print("POSITON IS $position \n \n \n")
+            frag.selectPark(position)
             view.findNavController().navigate(R.id.action_parking_list_to_details)
         }
 

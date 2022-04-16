@@ -31,6 +31,7 @@ lateinit var selected: Parking
  fun addParking(parking :Parking)
 {
  list.add(parking)
+ selectParking(parking)
 }
  fun getData(){
   for (i in images.indices){
@@ -39,10 +40,13 @@ lateinit var selected: Parking
     distances[i],temps_trajets[i],note[i], h_ouv[i],
     h_ferm[i], tarif[i])
    addParking(parking)
-   print("added $i");
+   print("added $i")
   }
 }
- fun selectedParking (p : Parking){
+ fun selectParking (p : Parking){
   selected = p
+ }
+ fun getParking (): Parking {
+  return selected
  }
 }

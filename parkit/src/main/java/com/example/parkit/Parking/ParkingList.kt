@@ -17,7 +17,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class ParkingList : Fragment() {
     private  var recyclerView: RecyclerView? = null
-
     val viewModel:ParkingViewModel by navGraphViewModels(R.id.parking_list)
 
     override fun onCreateView(
@@ -28,6 +27,7 @@ class ParkingList : Fragment() {
 
         var sheet = requireActivity().findViewById(R.id.sheet) as? FrameLayout
 
+      //  viewModel = ViewModelProvider(requireActivity()).get(ParkingViewModel::class.java)
 
         if (sheet != null) {
             BottomSheetBehavior.from(sheet).apply{
@@ -36,12 +36,14 @@ class ParkingList : Fragment() {
             }
         }
 
-
+       // viewModel.getData()
         recyclerView = _view.findViewById(R.id.recyclerView) as? RecyclerView
         recyclerView?.layoutManager = LinearLayoutManager(activity)
+        print("oncreate view parking list")
 
 
         arrayListOf<Parking>().also { viewModel.list = it }
+        viewModel.getData()
 
         return _view
 
@@ -49,9 +51,13 @@ class ParkingList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getData()
-        recyclerView?.adapter = Adapter(viewModel.list, view)
+        print("onviewCreatedparking list")
+
+        recyclerView?.adapter = Adapter(viewModel.list, view, this)
     }
 
-
+fun selectPark(i : Int)
+{
+    viewModel.selectParking(viewModel.list [i])
+}
 }
