@@ -15,7 +15,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="542dp"
             android:backgroundTint="@color/bg"
             app:cardCornerRadius="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -24,12 +24,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                tools:listitem="@layout/list_item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
+                android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:visibility="visible" />
+                tools:listitem="@layout/list_item" />
 
             <ImageView
                 android:id="@+id/dragbutton"

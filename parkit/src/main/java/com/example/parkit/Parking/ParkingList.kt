@@ -30,14 +30,14 @@ class ParkingList : Fragment() {
 
         if (sheet != null) {
             BottomSheetBehavior.from(sheet).apply{
-                peekHeight = 150
+               this.setGestureInsetBottomIgnored(true)
+               peekHeight=100
                 this.state = BottomSheetBehavior.STATE_COLLAPSED
             }
         }
 
         recyclerView = _view.findViewById(R.id.recyclerView) as? RecyclerView
         recyclerView?.layoutManager = LinearLayoutManager(activity)
-        print("oncreate view parking list")
 
 
         arrayListOf<Parking>().also { viewModel.list = it }
