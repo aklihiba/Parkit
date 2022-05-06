@@ -1,5 +1,6 @@
 package com.example.parkit.Parking
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,7 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import com.example.parkit.R
 import com.example.parkit.databinding.FragmentDetailsBinding
@@ -29,6 +33,7 @@ class Details : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
         super.onViewCreated(view, savedInstanceState)
         // get selected Position
         val selectedPosition = arguments?.getInt("position")
@@ -49,7 +54,12 @@ class Details : Fragment() {
             }
 
         binding.reserver.setOnClickListener() {
-            // TODO("add function reserver place de parking")
+            val con = pref.getBoolean("connected", false)
+if (con)  {
+    it.findNavController().navigate(R.id.action_parking_list_to_details)
+
+}
+
         }
 
         binding.gotoMaps.setOnClickListener{

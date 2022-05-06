@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo"></ImageView>
 
     <Button
-        android:id="@+id/connecter"
+        android:id="@+id/connexion"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
@@ -47,10 +47,10 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
-        android:text="s'inscrir"
+        android:text="s'inscrire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/connecter" />
+        app:layout_constraintTop_toBottomOf="@+id/connexion" />
 
     <View
         android:id="@+id/divider2"
@@ -86,14 +86,19 @@
         app:layout_constraintStart_toEndOf="@+id/divider2" />
 
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="98dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="154dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="@color/gris_clair"
         app:cardCornerRadius="25dp"
-        tools:layout_editor_absoluteY="541dp">
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView2">
+
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"

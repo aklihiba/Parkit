@@ -9,7 +9,6 @@ import com.example.parkit.R
 
 
 class MainParking : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

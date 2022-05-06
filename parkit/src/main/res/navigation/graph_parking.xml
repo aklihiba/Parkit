@@ -6,6 +6,39 @@
     app:startDestination="@id/parking_list">
 
     <fragment
+        android:id="@+id/connexionFragment"
+        android:name="com.example.parkit.Connexion"
+        android:label="fragment_connexion"
+        tools:layout="@layout/fragment_connexion" >
+        <action
+            android:id="@+id/action_connexionFragment_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/inscriptionFragment"
+        android:name="com.example.parkit.Inscription"
+        android:label="fragment_inscription"
+        tools:layout="@layout/fragment_inscription" >
+        <action
+            android:id="@+id/action_inscriptionFragment_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.parkit.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_inscriptionFragment"
+            app:destination="@id/inscriptionFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_connexionFragment"
+            app:destination="@id/connexionFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
         android:id="@+id/parking_list"
         android:name="com.example.parkit.Parking.ParkingList"
         android:label="fragment_parking_list"
@@ -18,5 +51,21 @@
         android:id="@+id/details"
         android:name="com.example.parkit.Parking.Details"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_details_to_reservationDetails"
+            app:destination="@id/reservationDetails" />
+        <action
+            android:id="@+id/action_details_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservationDetails"
+        android:name="com.example.parkit.Parking.ReservationDetails"
+        android:label="fragment_reservation_details"
+        tools:layout="@layout/fragment_reservation_details" >
+        <action
+            android:id="@+id/action_reservationDetails_to_parking_list"
+            app:destination="@id/parking_list" />
+    </fragment>
 </navigation>

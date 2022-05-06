@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/inscriptionFragment"
-        android:name="com.example.parkit.inscriptionFragment"
+        android:name="com.example.parkit.Inscription"
         android:label="fragment_inscription"
         tools:layout="@layout/fragment_inscription" />
     <fragment
         android:id="@+id/connexionFragment"
-        android:name="com.example.parkit.ConnexionFragment"
+        android:name="com.example.parkit.Connexion"
         android:label="fragment_connexion"
         tools:layout="@layout/fragment_connexion" />
 </navigation>
