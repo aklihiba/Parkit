@@ -1,6 +1,12 @@
-package com.example.parkit.Parking
+package com.example.parkit.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "parkings")
 data class Parking(
+    @PrimaryKey
+    val ParkingId:Int,
     var image:Int,
     var latitude:Double,
     var longitude: Double,

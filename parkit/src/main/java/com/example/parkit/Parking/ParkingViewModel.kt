@@ -2,6 +2,7 @@ package com.example.parkit.Parking
 
 import androidx.lifecycle.ViewModel
 import com.example.parkit.R
+import com.example.parkit.entity.Parking
 
 class ParkingViewModel : ViewModel() {
 
@@ -36,7 +37,7 @@ class ParkingViewModel : ViewModel() {
  fun getData():List<Parking> {
  if(list.isEmpty()) {
   for (i in images.indices) {
-   val parking = Parking(
+   val parking = Parking(i,
     images[i], latitude[i], longitude[i],
     etats[i], occupations[i], noms[i], adresses[i],
     distances[i], temps_trajets[i], note[i], h_ouv[i],

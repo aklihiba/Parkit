@@ -1,6 +1,5 @@
 package com.example.parkit.Parking
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,21 +7,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import com.example.parkit.R
 import com.example.parkit.databinding.FragmentDetailsBinding
-import com.example.parkit.databinding.FragmentParkingListBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.parkit.entity.Parking
 
 
 class Details : Fragment() {
 
-    lateinit var park:Parking
+    lateinit var park: Parking
     val viewModel:ParkingViewModel by navGraphViewModels(R.id.parking_list)
     private lateinit var binding: FragmentDetailsBinding
 
@@ -56,7 +51,11 @@ class Details : Fragment() {
         binding.reserver.setOnClickListener() {
             val con = pref.getBoolean("connected", false)
 if (con)  {
-    it.findNavController().navigate(R.id.action_parking_list_to_details)
+    it.findNavController().navigate(R.id.action_details_to_reservationDetails)
+
+} else
+{
+    it.findNavController().navigate(R.id.action_details_to_authFragment)
 
 }
 

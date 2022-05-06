@@ -64,8 +64,8 @@
             android:layout_marginStart="10dp"
             android:backgroundTint="@color/gris_clair"
             android:ems="10"
+            android:hint="email"
             android:inputType="textEmailAddress"
-            android:text="email"
             android:textColor="@color/gris_clair"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +93,8 @@
             android:layout_marginStart="10dp"
             android:backgroundTint="@color/gris_clair"
             android:ems="10"
+            android:hint="password"
             android:inputType="textPassword"
-            android:text="password"
             android:textColor="@color/gris_clair" />
     </com.google.android.material.card.MaterialCardView>
 

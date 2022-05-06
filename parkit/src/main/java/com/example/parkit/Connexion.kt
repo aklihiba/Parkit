@@ -25,11 +25,11 @@ class Connexion : Fragment() {
         val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
         super.onViewCreated(view, savedInstanceState)
         binding.connect.setOnClickListener{
-            //TODO("add case empty fields and refactor for project")
+            //TODO("personnalize empty fields warning and refactor for project")
             val mail = binding.editMail.text
             val mdp = binding.editPassword.text
             if(mail.isNotBlank() and mdp.isNotBlank()) {
-                if (mail.equals("test@gmail.com") and mdp.equals("test"))
+                if ((mail.toString() == "test@gmail.com") and (mdp.toString() == "test"))
                 {
                     pref.edit() {
                         putBoolean("connected", true)

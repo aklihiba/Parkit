@@ -1,25 +1,15 @@
 package com.example.parkit
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.bundleOf
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
-import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parkit.Parking.Parking
-import com.example.parkit.Parking.ParkingList
-import com.example.parkit.Parking.ParkingViewModel
+import com.example.parkit.entity.Parking
 
 
 class Adapter( val parkingList : List<Parking>): RecyclerView.Adapter<ViewHolder>() {
