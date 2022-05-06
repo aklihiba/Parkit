@@ -41,7 +41,10 @@ class ParkingList : Fragment() {
 
 
         arrayListOf<Parking>().also { viewModel.list = it }
-        viewModel.getData()
+        if(viewModel.list.isEmpty()){
+            viewModel.getData()
+        }
+
 
         return _view
 

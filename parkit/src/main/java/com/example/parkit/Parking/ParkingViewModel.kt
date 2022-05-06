@@ -31,7 +31,6 @@ lateinit var selected: Parking
  fun addParking(parking :Parking)
 {
  list.add(parking)
- selectParking(parking)
 }
  fun getData(){
   for (i in images.indices){
