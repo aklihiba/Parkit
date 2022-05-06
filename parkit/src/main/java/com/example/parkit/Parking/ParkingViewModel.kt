@@ -4,7 +4,10 @@ import androidx.lifecycle.ViewModel
 import com.example.parkit.R
 
 class ParkingViewModel : ViewModel() {
-   var images = arrayOf(
+
+ private val list  = mutableListOf<Parking>()
+ // create data
+   val images = arrayOf(
     R.drawable.parking1,
     R.drawable.parking2,
     R.drawable.parking3,
@@ -26,26 +29,24 @@ class ParkingViewModel : ViewModel() {
     var h_ferm = arrayOf("18h00","19h00","22h00","23h00","21h00","19h00","23h00","23h30")
     var latitude = arrayOf(36.679484,36.679484,36.679484,36.679484,36.679484,36.679484,36.679484,36.679484)
     var longitude = arrayOf(3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896)
-lateinit var list : ArrayList<Parking>
-lateinit var selected: Parking
- fun addParking(parking :Parking)
-{
- list.add(parking)
-}
- fun getData(){
-  for (i in images.indices){
-   val parking = Parking(images[i],latitude[i], longitude[i],
-    etats[i],occupations[i],noms[i],adresses[i],
-    distances[i],temps_trajets[i],note[i], h_ouv[i],
-    h_ferm[i], tarif[i])
-   addParking(parking)
-   print("added $i")
+
+
+
+// get Data
+ fun getData():List<Parking> {
+ if(list.isEmpty()) {
+  for (i in images.indices) {
+   val parking = Parking(
+    images[i], latitude[i], longitude[i],
+    etats[i], occupations[i], noms[i], adresses[i],
+    distances[i], temps_trajets[i], note[i], h_ouv[i],
+    h_ferm[i], tarif[i]
+   )
+   list.add(parking)
   }
+  }
+
+ return list
 }
- fun selectParking (p : Parking){
-  selected = p
- }
- fun getParking (): Parking {
-  return selected
- }
+
 }

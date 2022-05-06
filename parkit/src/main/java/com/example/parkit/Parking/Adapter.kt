@@ -1,5 +1,7 @@
 package com.example.parkit
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,21 +9,24 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
+import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.Parking.Parking
 import com.example.parkit.Parking.ParkingList
+import com.example.parkit.Parking.ParkingViewModel
 
 
-class Adapter(private val parkingList : ArrayList<Parking>, private val view :View, private val frag :ParkingList): RecyclerView.Adapter<ViewHolder>() {
-
+class Adapter( val parkingList : List<Parking>): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        frag.viewModel.getData()
-        return ViewHolder(itemView)
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
+
     }
 
 
@@ -36,11 +41,9 @@ class Adapter(private val parkingList : ArrayList<Parking>, private val view :Vi
         holder.temps_trajet.text = currentItem.temps
         holder.score.rating = currentItem.note.toFloat()
 
-        holder.list_item.setOnClickListener {
-
-            print("POSITON IS $position \n \n \n")
-            frag.selectPark(position)
-            view.findNavController().navigate(R.id.action_parking_list_to_details)
+        holder.itemView.setOnClickListener { view->
+            val bundle = bundleOf("position" to position)
+              view.findNavController().navigate(R.id.action_parking_list_to_details, bundle)
         }
 
 
@@ -53,7 +56,6 @@ class Adapter(private val parkingList : ArrayList<Parking>, private val view :Vi
 
 }
 class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    val list_item : ConstraintLayout = itemView.findViewById(R.id.cadre)
     val parking_image: ImageView = itemView.findViewById(R.id.parking_image)
     val etat: TextView = itemView.findViewById(R.id.etat)
     val occupation: TextView = itemView.findViewById(R.id.occupation)
