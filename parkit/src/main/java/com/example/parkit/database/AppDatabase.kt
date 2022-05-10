@@ -24,6 +24,19 @@ abstract class AppDatabase:RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
+        fun getDatabase(context: Context): AppDatabase {
+            // if the INSTANCE is not null, then return it,
+            // if it is, then create the database
+            if (INSTANCE == null) {
+                synchronized(this) {
+                    // Pass the database to the INSTANCE
+                    INSTANCE = buildDatabase(context)
+                }
+            }
+            // Return database.
+            return INSTANCE!!
+        }
+
         fun buildDatabase(context: Context): AppDatabase? {
             if (INSTANCE == null) {
                 synchronized(this) {

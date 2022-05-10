@@ -1,5 +1,7 @@
 package com.example.parkit.Parking
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -7,12 +9,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import com.example.parkit.R
+import com.example.parkit.database.AppDatabase
 import com.example.parkit.databinding.FragmentDetailsBinding
 import com.example.parkit.entity.Parking
+import com.example.parkit.entity.Reservation
+import kotlinx.coroutines.launch
+import java.util.*
 
 
 class Details : Fragment() {
@@ -42,7 +50,7 @@ class Details : Fragment() {
             binding.occupation.text = park.occupation
             binding.etat.text = park.etat
             binding.ratingBar.rating = park.note.toFloat()
-            binding.horaireOuvert?.text = park.heure_ouverture
+            binding.horaireOuvert.text = park.heure_ouverture
             binding.horaireFerme.text = park.heure_fermeture
             (park.tarif.toString() + "DZD").also { binding.prix.text = it }
 
@@ -51,6 +59,11 @@ class Details : Fragment() {
         binding.reserver.setOnClickListener() {
             val con = pref.getBoolean("connected", false)
 if (con)  {
+    val database = AppDatabase.getDatabase(requireContext())
+
+    val newReservation = Reservation(1,1,1,10,11)
+    database.getReservationDo().addReserv(newReservation)
+
     it.findNavController().navigate(R.id.action_details_to_reservationDetails)
 
 } else

@@ -20,6 +20,6 @@ data class Reservation (
     val reservationId:Int,
     val userId:Int,
     val parkingId:Int,
-    val hEntree : Date,
-    val hSortie : Date,
+    val hEntree : Int,
+    val hSortie : Int,
 )

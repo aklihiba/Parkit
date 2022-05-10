@@ -11,11 +11,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.R
+import com.example.parkit.database.AppDatabase
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var  navController: NavController
+    private val database by lazy { AppDatabase.getDatabase(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

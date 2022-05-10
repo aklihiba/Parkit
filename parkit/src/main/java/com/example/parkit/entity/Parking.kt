@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "parkings")
 data class Parking(
     @PrimaryKey
-    val ParkingId:Int,
+    val parkingId:Int,
     var image:Int,
     var latitude:Double,
     var longitude: Double,
