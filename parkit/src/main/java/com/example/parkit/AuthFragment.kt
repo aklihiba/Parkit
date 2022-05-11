@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.parkit.databinding.FragmentAuthBinding
-import com.example.parkit.databinding.FragmentDetailsBinding
 
 
 class AuthFragment : Fragment() {

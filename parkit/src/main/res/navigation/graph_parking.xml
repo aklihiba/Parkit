@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_connexionFragment_to_details"
             app:destination="@id/details" />
+        <action
+            android:id="@+id/action_connexionFragment_to_reservationDetails"
+            app:destination="@id/reservationDetails" />
     </fragment>
     <fragment
         android:id="@+id/inscriptionFragment"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_inscriptionFragment_to_details"
             app:destination="@id/details" />
+        <action
+            android:id="@+id/action_inscriptionFragment_to_reservationDetails"
+            app:destination="@id/reservationDetails" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -46,6 +52,9 @@
         <action
             android:id="@+id/action_parking_list_to_details"
             app:destination="@id/details" />
+        <action
+            android:id="@+id/action_parking_list_to_reservationDetails"
+            app:destination="@id/reservationDetails" />
     </fragment>
     <fragment
         android:id="@+id/details"
