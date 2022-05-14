@@ -35,9 +35,10 @@ class Connexion : Fragment() {
                         putBoolean("connected", true)
                         putString("email", mail.toString())
                         putString("pwd" , mdp.toString())
+                        putInt("id", 1)
                         apply()
                     }
-                    it.findNavController().navigate(R.id.action_connexionFragment_to_details)
+                    it.findNavController().navigate(R.id.action_connexionFragment_to_reservationDetails)
                 }else
                 {
                     Toast.makeText(requireContext(),"WRONG CREDENTIALS",Toast.LENGTH_SHORT).show()

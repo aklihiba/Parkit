@@ -26,6 +26,10 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/card_tile.xml" value="0.124" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/google.xml" value="0.2335" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/ic_create.xml" value="0.252" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/ic_directions_run.xml" value="0.179" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/ic_info_outline.xml" value="0.179" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/ic_near_me.xml" value="0.179" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/ic_place_.xml" value="0.179" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/list_bg.xml" value="0.124" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/parking_img_shape.xml" value="0.124" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit/src/main/res/drawable/round_top_bg.xml" value="0.124" />
@@ -47,7 +51,7 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit2/src/main/res/layout/drawer_header.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit2/src/main/res/layout/fragment_parkings.xml" value="0.15164473684210528" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit2/src/main/res/layout/fragment_profil.xml" value="0.11413043478260869" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit2/src/main/res/menu/drawer_menu.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/parkit2/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2595" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/tasks/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Projet_mobile/taskslist/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />

@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parkit.Adapter
@@ -34,6 +37,20 @@ class ParkingList : Fragment() {
             BottomSheetBehavior.from(binding.sheet).apply{
                 peekHeight = 150
                 this.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+        }
+
+        val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
+        val mesReservation = binding.reservations
+        mesReservation.setOnClickListener{
+            val con = pref.getBoolean("connected", false)
+            if (con)  {
+                it.findNavController().navigate(R.id.action_parking_list_to_reservationDetails)
+
+            } else
+            {
+                it.findNavController().navigate(R.id.action_parking_list_to_connexionFragment)
+
             }
         }
     }

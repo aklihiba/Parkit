@@ -1,11 +1,12 @@
 package com.example.parkit.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName = "reservations",foreignKeys = [
+@Entity(tableName = "reservations",/*foreignKeys = [
     ForeignKey(entity = User::class,parentColumns = ["userId"],childColumns = ["userId"],
         onUpdate = ForeignKey.CASCADE,
         onDelete = ForeignKey.CASCADE
@@ -15,11 +16,14 @@ import java.util.*
         onDelete = ForeignKey.CASCADE
     )])
 
+    */
+)
 data class Reservation (
-    @PrimaryKey
-    val reservationId:Int,
-    val userId:Int,
-    val parkingId:Int,
-    val hEntree : Date,
-    val hSortie : Date,
+    @PrimaryKey(autoGenerate = true)
+    val reservationId:Int = 0,
+    @ColumnInfo(name = "userId") val userId:Int,
+    @ColumnInfo(name = "parkingId") val parkingId:Int,
+    @ColumnInfo(name="parkingName") val parkingName : String,
+    @ColumnInfo(name = "hEntree") val hEntree : String? = "",
+    @ColumnInfo(name = "hSortie") val hSortie : String? = "",
 )
