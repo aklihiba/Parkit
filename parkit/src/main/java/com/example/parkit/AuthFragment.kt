@@ -21,7 +21,7 @@ class AuthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.inscription.setOnClickListener{
+        /*binding.inscription.setOnClickListener{
             it.findNavController().navigate(R.id.action_authFragment_to_inscriptionFragment)
 
         }
@@ -29,6 +29,8 @@ class AuthFragment : Fragment() {
             it.findNavController().navigate(R.id.action_authFragment_to_connexionFragment)
 
         }
+
+         */
 
     }
 

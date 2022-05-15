@@ -35,7 +35,7 @@ class ReservationDetails : Fragment() {
                apply()
            }
 
-            it.findNavController().navigate(R.id.action_reservationDetails_to_parking_list)
+            it.findNavController().navigate(R.id.action_reservationDetails_to_fragmentParkings)
 
         }
 

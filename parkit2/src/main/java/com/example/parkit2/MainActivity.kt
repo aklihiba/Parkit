@@ -8,7 +8,7 @@ import androidx.navigation.ui.NavigationUI
 import com.example.parkit2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var navController: NavController
+    lateinit var navMenuController: NavController
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
-        navController = navHostFragment.navController
-        NavigationUI.setupActionBarWithNavController(this,navController,binding.drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView,navController)
+        navMenuController = navHostFragment.navController
+        NavigationUI.setupActionBarWithNavController(this,navMenuController,binding.drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView,navMenuController)
     }
 
 
-    override fun onSupportNavigateUp() = super.onSupportNavigateUp() || NavigationUI.navigateUp(navController,binding.drawerLayout)
+    override fun onSupportNavigateUp() = super.onSupportNavigateUp() || NavigationUI.navigateUp(navMenuController,binding.drawerLayout)
 
 
 

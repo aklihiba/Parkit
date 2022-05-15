@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/graph_parking">
+    <include app:graph="@navigation/graph_parking"/>
+    <fragment
+        android:id="@+id/fragmentProfil"
+        android:name="com.example.parkit.Profil"
+        android:label="profil"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/fragmentMesReservations"
+        android:name="com.example.parkit.Parking.MesReservation"
+        android:label="Reservation"
+        tools:layout="@layout/fragment_mes_reservation" />
+
+</navigation>

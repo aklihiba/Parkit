@@ -18,7 +18,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class ParkingList : Fragment() {
 
-    val viewModel:ParkingViewModel by navGraphViewModels(R.id.parking_list)
+    val viewModel:ParkingViewModel by navGraphViewModels(R.id.fragmentParkings)
     private lateinit var binding: FragmentParkingListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View ?{
@@ -41,7 +41,7 @@ class ParkingList : Fragment() {
         }
 
         val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
-        val mesReservation = binding.reservations
+        /*
         mesReservation.setOnClickListener{
             val con = pref.getBoolean("connected", false)
             if (con)  {
@@ -53,6 +53,8 @@ class ParkingList : Fragment() {
 
             }
         }
+
+         */
     }
 
 

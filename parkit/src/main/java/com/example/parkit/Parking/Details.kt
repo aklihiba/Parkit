@@ -25,7 +25,7 @@ import java.time.LocalDateTime.now
 class Details : Fragment() {
 
     lateinit var park: Parking
-    val viewModel:ParkingViewModel by navGraphViewModels(R.id.parking_list)
+    val viewModel:ParkingViewModel by navGraphViewModels(R.id.fragmentParkings)
     private lateinit var binding: FragmentDetailsBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

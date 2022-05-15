@@ -8,14 +8,15 @@ import android.view.ViewGroup
 import com.example.parkit.R
 
 
-class MainParking : Fragment() {
+class MesReservation : Fragment() {
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_parking, container, false)
+        return inflater.inflate(R.layout.fragment_mes_reservation, container, false)
     }
-
 
 }
