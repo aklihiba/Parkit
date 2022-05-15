@@ -6,7 +6,7 @@ import com.example.parkit.entity.Parking
 
 class ParkingViewModel : ViewModel() {
 
- private val list  = mutableListOf<Parking>()
+ var list  = mutableListOf<Parking>()
  // create data
    val images = arrayOf(
     R.drawable.parking1,
