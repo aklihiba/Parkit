@@ -10,7 +10,7 @@ import retrofit2.http.GET
 
 interface Endpoint {
 
-    @GET("parkings/getall")
+    @GET("Parkings")
     suspend fun getAllParkings(): Response<List<Parking>>
 
 

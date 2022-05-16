@@ -24,8 +24,6 @@ import kotlinx.coroutines.*
 
 class ParkingList : Fragment() {
 
-    lateinit var progressBar: ProgressBar
-    lateinit var recyclerView: RecyclerView
 
     val viewModel:ParkingViewModel by navGraphViewModels(R.id.fragmentParkings)
     private lateinit var binding: FragmentParkingListBinding
@@ -51,12 +49,12 @@ class ParkingList : Fragment() {
 
         val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
         if(viewModel.list.isEmpty()) {
-            recyclerView.adapter = Adapter(requireActivity(), viewModel.list)
+            binding.recyclerView.adapter = Adapter(requireActivity(), viewModel.list)
             loadParkings()
 
         }
         else {
-            recyclerView.adapter = Adapter(requireActivity(),viewModel.list)
+            binding.recyclerView.adapter = Adapter(requireActivity(),viewModel.list)
         }
 
     /*
@@ -79,19 +77,19 @@ class ParkingList : Fragment() {
     fun loadParkings() {
         val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
             requireActivity().runOnUiThread {
-                progressBar.visibility = View.INVISIBLE
+                binding.progressB.visibility = View.INVISIBLE
                 Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
             }
 
         }
-        progressBar.visibility = View.VISIBLE
+        binding.progressB.visibility = View.VISIBLE
         CoroutineScope(Dispatchers.IO+ exceptionHandler).launch {
             val response = Endpoint.createEndpoint().getAllParkings()
             withContext(Dispatchers.Main) {
-                progressBar.visibility = View.INVISIBLE
+                binding.progressB.visibility = View.INVISIBLE
                 if (response.isSuccessful && response.body() != null) {
                     viewModel.list = response.body()!!.toMutableList()
-                    recyclerView.adapter = Adapter(requireActivity(), viewModel.list)
+                    binding.recyclerView.adapter = Adapter(requireActivity(), viewModel.list)
                 } else {
                     Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
                 }
