@@ -19,10 +19,13 @@ import com.example.parkit.databinding.FragmentParkingListBinding
 import com.example.parkit.entity.Parking
 import com.example.parkit.retrofit.Endpoint
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.mapbox.maps.MapView
+import com.mapbox.maps.Style
 import kotlinx.coroutines.*
 
 
 class ParkingList : Fragment() {
+    var mapView: MapView? = null
 
 
     val viewModel:ParkingViewModel by navGraphViewModels(R.id.fragmentParkings)
@@ -31,7 +34,10 @@ class ParkingList : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View ?{
         binding = FragmentParkingListBinding.inflate(layoutInflater)
         val view = binding.root
+//        var mapView = binding.mapView
+//        mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
         return view
+
 
     }
 
@@ -72,7 +78,29 @@ class ParkingList : Fragment() {
 
          */
 
+
+
     }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        mapView?.onStart()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        mapView?.onStop()
+//    }
+//
+//    override fun onLowMemory() {
+//        super.onLowMemory()
+//        mapView?.onLowMemory()
+//    }
+//
+//    override fun onDestroyView() {
+//        super.onDestroy()
+//        mapView?.onDestroy()
+//    }
 
     fun loadParkings() {
         val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
