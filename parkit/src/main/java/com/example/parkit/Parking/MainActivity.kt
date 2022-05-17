@@ -3,6 +3,8 @@ package com.example.parkit.Parking
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -27,9 +29,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         val navHostFragment = supportFragmentManager. findFragmentById(R.id.navHost) as NavHostFragment
         navMenuController = navHostFragment.navController
-        NavigationUI.setupActionBarWithNavController(this,navMenuController,binding.drawerLayout)
+         NavigationUI.setupActionBarWithNavController(this,navMenuController,binding.drawerLayout)
         NavigationUI.setupWithNavController(binding.navView,navMenuController)
 
+//        binding.menuButton.setOnClickListener{
+//            binding.drawerLayout.openDrawer(GravityCompat.START)
+//        }
 
 //        val navHostFragment2 = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 //        navController = navHostFragment2.navController
@@ -37,5 +42,6 @@ class MainActivity : AppCompatActivity() {
 
     }
     override fun onSupportNavigateUp() = super.onSupportNavigateUp() || NavigationUI.navigateUp(navMenuController,binding.drawerLayout)
+
 
 }

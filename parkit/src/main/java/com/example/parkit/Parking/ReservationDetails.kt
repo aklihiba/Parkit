@@ -12,7 +12,6 @@ import androidx.core.content.edit
 import androidx.navigation.findNavController
 import com.example.parkit.R
 import com.example.parkit.database.AppDatabase
-import com.example.parkit.databinding.FragmentConnexionBinding
 import com.example.parkit.databinding.FragmentReservationDetailsBinding
 
 

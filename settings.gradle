@@ -10,6 +10,19 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = "mapbox"
+                // Use the secret token you stored in gradle.properties as the password
+                password = "sk.eyJ1IjoiaGliYS1ha2xpIiwiYSI6ImNsMzdzd3VicTIxMW8zbHF2MW1uZ2F0a2MifQ.MrmmwBJmH3h1mqfYT6DQpA"
+            }
+        }
     }
 }
 rootProject.name = "Projet_mobile"
