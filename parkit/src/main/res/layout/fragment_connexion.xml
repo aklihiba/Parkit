@@ -44,7 +44,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
+        android:id="@+id/cardview33"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardview33"
         app:strokeColor="@color/gris_clair"
         app:strokeWidth="0.7dp">
 
