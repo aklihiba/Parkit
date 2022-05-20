@@ -6,9 +6,9 @@ import com.example.parkit.entity.Parking
 
 class ParkingViewModel : ViewModel() {
 
- private val list  = mutableListOf<Parking>()
+ var list  = mutableListOf<Parking>()
  // create data
-   val images = arrayOf(
+  /* val images = arrayOf(
     R.drawable.parking1,
     R.drawable.parking2,
     R.drawable.parking3,
@@ -32,20 +32,9 @@ class ParkingViewModel : ViewModel() {
     var longitude = arrayOf(3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896,3.138896)
 
 
-
+*/
 // get Data
  fun getData():List<Parking> {
- if(list.isEmpty()) {
-  for (i in images.indices) {
-   val parking = Parking(i,
-    images[i], latitude[i], longitude[i],
-    etats[i], occupations[i], noms[i], adresses[i],
-    distances[i], temps_trajets[i], note[i], h_ouv[i],
-    h_ferm[i], tarif[i]
-   )
-   list.add(parking)
-  }
-  }
 
  return list
 }

@@ -32,9 +32,7 @@ class MainActivity : AppCompatActivity() {
          NavigationUI.setupActionBarWithNavController(this,navMenuController,binding.drawerLayout)
         NavigationUI.setupWithNavController(binding.navView,navMenuController)
 
-//        binding.menuButton.setOnClickListener{
-//            binding.drawerLayout.openDrawer(GravityCompat.START)
-//        }
+
 
 //        val navHostFragment2 = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 //        navController = navHostFragment2.navController

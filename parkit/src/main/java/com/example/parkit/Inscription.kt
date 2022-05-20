@@ -19,4 +19,14 @@ class Inscription : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val nom =  binding.nomPost.text
+        val prenom = binding.prenomPost.text
+        val email = binding.emailPost.text
+        val num = binding.numPost.text
+        val pwd = binding.pwdPost.text
+
+    }
+
 }
