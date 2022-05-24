@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_profil.xml",
+        "source": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\src\\main\\res\\layout\\fragment_profil.xml"
+    },
+    {
+        "merged": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mes_reservations.xml",
+        "source": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\src\\main\\res\\layout\\fragment_mes_reservations.xml"
+    },
+    {
+        "merged": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_parkings.xml",
+        "source": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\src\\main\\res\\layout\\fragment_parkings.xml"
+    },
+    {
+        "merged": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\drawer_header.xml",
+        "source": "D:\\TDM\\Cours\\Projet_mobile\\parkit2\\src\\main\\res\\layout\\drawer_header.xml"
+    }
+]

@@ -1,0 +1,86 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.parkit2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="29"
+8-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml
+10
+11    <application
+11-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:5:5-21:19
+12        android:allowBackup="true"
+12-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.7.0] C:\Users\Rima\.gradle\caches\transforms-3\1694182d201b0b95380973f014321862\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@mipmap/ic_launcher"
+16-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.Projet_mobile" >
+21-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:11:9-51
+22        <activity
+22-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:12:9-20:20
+23            android:name="com.example.parkit2.MainActivity"
+23-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:13:13-41
+24            android:exported="true" >
+24-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:14:13-36
+25            <intent-filter>
+25-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:15:9-19:25
+26                <action android:name="android.intent.action.MAIN" />
+26-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:16:13-65
+26-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:16:21-62
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:18:13-73
+28-->D:\TDM\Cours\Projet_mobile\parkit2\src\main\AndroidManifest.xml:18:23-70
+29            </intent-filter>
+30        </activity>
+31
+32        <uses-library
+32-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+33            android:name="androidx.window.extensions"
+33-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+34            android:required="false" />
+34-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+35        <uses-library
+35-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+36            android:name="androidx.window.sidecar"
+36-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+37            android:required="false" />
+37-->[androidx.window:window:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\55c42026df9dfe4bb60beb3aed5d118f\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+38
+39        <provider
+39-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+40            android:name="androidx.startup.InitializationProvider"
+40-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+41            android:authorities="com.example.parkit2.androidx-startup"
+41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+42            android:exported="false" >
+42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+43            <meta-data
+43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+44                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+45                android:value="androidx.startup" />
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Rima\.gradle\caches\transforms-3\0c91ad1de7a45de70e7019a5c5eb5923\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+46            <meta-data
+46-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Rima\.gradle\caches\transforms-3\cf2be5b8f04d9082c8ad705d0f669a3d\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+47                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+47-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Rima\.gradle\caches\transforms-3\cf2be5b8f04d9082c8ad705d0f669a3d\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+48                android:value="androidx.startup" />
+48-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Rima\.gradle\caches\transforms-3\cf2be5b8f04d9082c8ad705d0f669a3d\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+49        </provider>
+50    </application>
+51
+52</manifest>
