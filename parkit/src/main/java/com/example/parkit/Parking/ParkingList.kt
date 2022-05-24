@@ -35,9 +35,8 @@ class ParkingList : Fragment() {
         binding = FragmentParkingListBinding.inflate(layoutInflater)
         val view = binding.root
         binding.progressB.visibility = View.INVISIBLE
-
-//        var mapView = binding.mapView
-//        mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
+        var mapView = binding.mapView
+        mapView?.getMapboxMap()?.loadStyleUri("mapbox://styles/hiba-akli/cl37sgdw800e214p6u9lne2k8")
         return view
 
 

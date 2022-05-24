@@ -7,7 +7,23 @@
     tools:context=".Parking.ParkingList">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.mapbox.maps.MapView
+            xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            mapbox:mapbox_cameraTargetLat="36.6993"
+            mapbox:mapbox_cameraTargetLng="3.1755"
+            mapbox:mapbox_cameraZoom="11.0"
+            mapbox:mapbox_resourcesAccessToken="@string/mapbox_access_token"
+            />
 
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <FrameLayout
         android:id="@+id/sheet"
         android:layout_width="match_parent"
@@ -52,23 +68,7 @@
 
     </FrameLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-<!--
-        <com.mapbox.maps.MapView
-            xmlns:mapbox="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            mapbox:mapbox_cameraTargetLat="40.7128"
-            mapbox:mapbox_cameraTargetLng="-74.0060"
-            mapbox:mapbox_cameraZoom="9.0"
-            mapbox:mapbox_resourcesAccessToken="@string/mapbox_access_token"
-            />
-            -->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <ProgressBar
         android:id="@+id/progressB"

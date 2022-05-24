@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Parking(
     @PrimaryKey
     val id:Int,
-    var image:Int,
+    var image:String,
     var latitude:Double,
     var longitude: Double,
     var etat:String,

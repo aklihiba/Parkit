@@ -25,8 +25,7 @@ class Adapter( val context :Context , val parkingList : List<Parking>): Recycler
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = parkingList[position]
         holder.apply {
-            parking_image.setImageResource(R.drawable.parking2)
-            //Glide.with(context).load(url +currentItem.image).into(parking_image)
+            Glide.with(this.itemView.context).load(currentItem.image).into(parking_image)
             etat.text = currentItem.etat
             occupation.text = currentItem.occupation
             nom.text = currentItem.nom

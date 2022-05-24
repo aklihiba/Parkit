@@ -1,6 +1,5 @@
 package com.example.parkit.Parking
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -13,8 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
+import com.bumptech.glide.Glide
 import com.example.parkit.R
-import com.example.parkit.dao.ReservationDao
 import com.example.parkit.database.AppDatabase
 import com.example.parkit.databinding.FragmentDetailsBinding
 import com.example.parkit.entity.Parking
@@ -43,7 +42,8 @@ class Details : Fragment() {
         if(selectedPosition!=null) {
              park = viewModel.getData().get(selectedPosition)
             binding.nom.text = park.nom
-            binding.imageView.setImageResource(park.image)
+            //binding.imageView.setImageResource(park.image)
+            Glide.with(this).load(park.image).into(binding.imageView)
             binding.adresse.text = park.adresse
             binding.distance.text = park.distance
             binding.tempsTrajet.text = park.temps

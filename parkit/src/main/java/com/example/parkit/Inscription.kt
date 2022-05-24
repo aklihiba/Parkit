@@ -75,7 +75,7 @@ class Inscription : Fragment() {
             withContext(Dispatchers.Main) {
                 binding.progressB.visibility = View.INVISIBLE
                 if ( response.isSuccessful && response.body() != null) {
-                    if (response.body() == "201") {
+                    if (response.body()!!.toInt() == 200) {
 
                         pref.edit() {
                             putBoolean("connected", true)
