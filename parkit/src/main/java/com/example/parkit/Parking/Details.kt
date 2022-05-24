@@ -59,7 +59,7 @@ class Details : Fragment() {
                 if (con)  {
                     // sauvgarde de la reservation
                     val db = AppDatabase.buildDatabase(requireContext());
-                    val res = Reservation(parkingId = selectedPosition,parkingName = park.nom, userId = pref.getInt("id", 1),
+                    val res = Reservation(parkingId = selectedPosition,parkingName = park.nom, userId = pref.getString("id", "")!!.toInt(),
                         hEntree = now().dayOfMonth.toString())
                     db?.getReservationDao()?.insertreservation(res);
 

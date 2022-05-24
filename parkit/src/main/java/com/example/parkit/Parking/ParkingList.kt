@@ -34,6 +34,8 @@ class ParkingList : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View ?{
         binding = FragmentParkingListBinding.inflate(layoutInflater)
         val view = binding.root
+        binding.progressB.visibility = View.INVISIBLE
+
 //        var mapView = binding.mapView
 //        mapView?.getMapboxMap()?.loadStyleUri(Style.MAPBOX_STREETS)
         return view
@@ -53,7 +55,6 @@ class ParkingList : Fragment() {
             }
         }
 
-        val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
         if(viewModel.list.isEmpty()) {
             binding.recyclerView.adapter = Adapter(requireActivity(), viewModel.list)
             loadParkings()
@@ -62,22 +63,6 @@ class ParkingList : Fragment() {
         else {
             binding.recyclerView.adapter = Adapter(requireActivity(),viewModel.list)
         }
-
-    /*
-        mesReservation.setOnClickListener{
-            val con = pref.getBoolean("connected", false)
-            if (con)  {
-                it.findNavController().navigate(R.id.action_parking_list_to_reservationDetails)
-
-            } else
-            {
-                it.findNavController().navigate(R.id.action_parking_list_to_connexionFragment)
-
-            }
-        }
-
-         */
-
 
 
     }
