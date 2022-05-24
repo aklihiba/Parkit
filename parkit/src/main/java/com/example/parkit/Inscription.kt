@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.fragment.findNavController
@@ -84,7 +85,13 @@ class Inscription : Fragment() {
 
                             apply()
                         }
-                        findNavController().navigate(R.id.action_inscription2_to_reservationDetails)
+                        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object:
+                            OnBackPressedCallback(true){
+                            override fun handleOnBackPressed() {
+                                findNavController().popBackStack(R.id.fragmentParkings, false)
+                            }
+
+                        })
                     }
                 } else {
                     Toast.makeText(

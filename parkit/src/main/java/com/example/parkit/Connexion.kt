@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.findNavController
@@ -32,6 +33,9 @@ class Connexion : Fragment() {
         binding.progressB.visibility = View.INVISIBLE
 
         super.onViewCreated(view, savedInstanceState)
+
+
+        requireActivity().actionBar
         binding.connect.setOnClickListener {
             //TODO("personnalize empty fields warning and refactor for project")
             val mail = binding.editMail.text
@@ -122,8 +126,8 @@ class Connexion : Fragment() {
                                 putString("id", id)
                                 apply()
                             }
-                        //TODO change this to the pop and change the graph
-                        findNavController().navigate(R.id.action_connexionFragment_to_reservationDetails)
+                        findNavController().popBackStack(R.id.fragmentParkings, false)
+
                         }
                     } else {
                     Toast.makeText(

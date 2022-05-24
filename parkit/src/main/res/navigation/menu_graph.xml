@@ -9,11 +9,37 @@
         android:id="@+id/fragmentProfil"
         android:name="com.example.parkit.Profil"
         android:label="profil"
-        tools:layout="@layout/fragment_profil" />
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/action_fragmentProfil_to_connexion"
+            app:destination="@id/connexion"
+            app:popUpTo="@id/graph" />
+    </fragment>
+
     <fragment
         android:id="@+id/fragmentMesReservations"
         android:name="com.example.parkit.Parking.MesReservation"
         android:label="Reservation"
-        tools:layout="@layout/fragment_mes_reservation" />
+        tools:layout="@layout/fragment_mes_reservation" >
+        <action
+            android:id="@+id/action_fragmentMesReservations_to_connexion"
+            app:destination="@id/connexion"
+            app:popUpTo="@id/graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/connexion"
+        android:name="com.example.parkit.Connexion"
+        android:label="connexion"
+        tools:layout="@layout/fragment_connexion" >
+        <action
+            android:id="@+id/action_connexion_to_inscription3"
+            app:destination="@id/inscription3"
+            app:popUpTo="@id/graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/inscription3"
+        android:name="com.example.parkit.Inscription"
+        android:label="inscription"
+        tools:layout="@layout/fragment_inscription" />
 
 </navigation>

@@ -55,22 +55,16 @@ class Details : Fragment() {
             (park.tarif.toString() + "DZD").also { binding.prix.text = it }
 
             binding.reserver.setOnClickListener() {
-                val con = pref.getBoolean("connected", false)
-                if (con)  {
+
                     // sauvgarde de la reservation
                     val db = AppDatabase.buildDatabase(requireContext());
-                    val res = Reservation(parkingId = selectedPosition,parkingName = park.nom, userId = pref.getString("id", "")!!.toInt(),
+                   /* val res = Reservation(parkingId = selectedPosition,parkingName = park.nom, userId = pref.getString("id", "")!!.toInt(),
                         hEntree = now().dayOfMonth.toString())
                     db?.getReservationDao()?.insertreservation(res);
 
 
+                    */
                     it.findNavController().navigate(R.id.action_details_to_reservationDetails)
-
-                } else
-                {
-                    it.findNavController().navigate(R.id.action_details_to_connexionFragment)
-
-                }
 
             }
             }
