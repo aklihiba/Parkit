@@ -203,12 +203,17 @@
 
     <Button
         android:id="@+id/reserver"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button"
         android:text="reserver"
+        android:backgroundTint="@color/yellow"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:cornerRadius="25dp"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:iconTint="@color/white"

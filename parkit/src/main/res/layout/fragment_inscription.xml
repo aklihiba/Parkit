@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/button"
-        style="@style/Widget.MaterialComponents.Button.Icon"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
