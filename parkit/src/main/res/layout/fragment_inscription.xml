@@ -56,7 +56,8 @@
         app:boxCornerRadiusTopStart="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">>
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailPost"
@@ -79,7 +80,8 @@
         app:boxCornerRadiusTopStart="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField1">
+        app:layout_constraintTop_toBottomOf="@+id/textField1"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nomPost"
@@ -103,7 +105,8 @@
         app:boxCornerRadiusTopStart="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField2">
+        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/prenomPost"
@@ -128,7 +131,8 @@
         app:boxCornerRadiusTopStart="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField3">
+        app:layout_constraintTop_toBottomOf="@+id/textField3"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numPost"
@@ -154,7 +158,8 @@
         app:endIconTint="@color/gris_clair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField4">
+        app:layout_constraintTop_toBottomOf="@+id/textField4"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pwdPost"
@@ -181,7 +186,8 @@
         app:endIconTint="@color/gris_clair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField5">
+        app:layout_constraintTop_toBottomOf="@+id/textField5"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmpwdPost"

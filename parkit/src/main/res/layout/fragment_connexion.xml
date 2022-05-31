@@ -58,7 +58,8 @@
         app:boxCornerRadiusBottomEnd="50dp"
         app:boxCornerRadiusBottomStart="50dp"
         app:boxCornerRadiusTopEnd="50dp"
-        app:boxCornerRadiusTopStart="50dp">
+        app:boxCornerRadiusTopStart="50dp"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editMail"
@@ -85,7 +86,8 @@
         app:boxCornerRadiusBottomEnd="50dp"
         app:boxCornerRadiusBottomStart="50dp"
         app:boxCornerRadiusTopEnd="50dp"
-        app:boxCornerRadiusTopStart="50dp">
+        app:boxCornerRadiusTopStart="50dp"
+        app:boxStrokeWidth="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editPassword"
@@ -112,7 +114,8 @@
         app:layout_constraintBottom_toTopOf="@+id/inscription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <Button
         android:id="@+id/inscription"
