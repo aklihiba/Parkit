@@ -1,4 +1,4 @@
-package com.example.parkit
+package com.example.parkit.Authentification
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.fragment.findNavController
-import com.example.parkit.databinding.FragmentConnexionBinding
+import com.example.parkit.R
 import com.example.parkit.databinding.FragmentInscriptionBinding
 import com.example.parkit.entity.User
 import com.example.parkit.retrofit.Endpoint

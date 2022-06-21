@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="noter ce parking"
+        android:textColor="@color/gris_clair"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+
+        />
+
+          <RatingBar
+              android:id="@+id/ratingBar"
+              style="@style/Widget.AppCompat.RatingBar.Indicator"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="10dp"
+              android:isIndicator="false"
+              android:progressBackgroundTint="@color/gris_clair"
+              android:progressTint="@color/yellow"
+              android:rating="2.2"
+              android:stepSize="0.1"
+              android:layout_gravity="center"
+              />
+
+     <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/comment"
+         android:layout_width="match_parent"
+         android:layout_height="55dp"
+         android:layout_margin="30dp"
+
+         android:hint="commentaire"
+         android:textColorHint="@color/gris_clair"
+         app:boxBackgroundColor="@color/tiles"
+         app:boxCornerRadiusBottomEnd="50dp"
+         app:boxCornerRadiusBottomStart="50dp"
+         app:boxCornerRadiusTopEnd="50dp"
+         app:boxCornerRadiusTopStart="50dp"
+         app:boxStrokeWidth="0dp"
+         >
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/editcomment"
+              android:layout_width="match_parent"
+
+              android:layout_height="wrap_content"
+
+              android:inputType="textMultiLine"
+              android:textColor="@color/gris_clair" />
+
+     </com.google.android.material.textfield.TextInputLayout>
+
+
+       <Button
+         android:id="@+id/valider"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_margin="20dp"
+         android:background="@drawable/button"
+         android:text="valider"
+         android:textColor="@color/white"
+         android:textSize="12sp"
+         app:iconTint="@color/white"
+android:layout_gravity="right"
+         >
+
+     </Button>
+
+
+
+</LinearLayout>

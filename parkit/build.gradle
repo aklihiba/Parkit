@@ -82,4 +82,8 @@ dependencies {
 
     //mapbox
     implementation 'com.mapbox.maps:android:10.5.0'
+
+    //synchronisation avec workmanager
+    def work_version = "2.7.1"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
 }

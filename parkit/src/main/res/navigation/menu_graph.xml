@@ -7,7 +7,7 @@
     <include app:graph="@navigation/graph_parking"/>
     <fragment
         android:id="@+id/fragmentProfil"
-        android:name="com.example.parkit.Profil"
+        android:name="com.example.parkit.Authentification.Profil"
         android:label="profil"
         tools:layout="@layout/fragment_profil" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/connexion"
-        android:name="com.example.parkit.Connexion"
+        android:name="com.example.parkit.Authentification.Connexion"
         android:label="connexion"
         tools:layout="@layout/fragment_connexion" >
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/inscription3"
-        android:name="com.example.parkit.Inscription"
+        android:name="com.example.parkit.Authentification.Inscription"
         android:label="inscription"
         tools:layout="@layout/fragment_inscription" />
 

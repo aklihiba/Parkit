@@ -2,20 +2,15 @@ package com.example.parkit.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import java.util.*
 
-@Entity(tableName = "reservations",
-
-)
-data class Reservation (
+@Entity(tableName = "ratings")
+class rating (
     @PrimaryKey(autoGenerate = true)
-    val reservationId:Int = 0,
+    val rateId:Int = 0,
     @ColumnInfo(name = "userId") val userId:Int,
     @ColumnInfo(name = "parkingId") val parkingId:Int,
-    @ColumnInfo(name="parkingName") val parkingName : String,
-    @ColumnInfo(name = "hEntree") val hEntree : String? = "",
-    @ColumnInfo(name = "hSortie") val hSortie : String? = "",
+    @ColumnInfo(name="rate") val rate : Float,
+    @ColumnInfo(name = "comment") val comment : String? = "",
     @ColumnInfo(name = "isSync") val isSync : Boolean? = false ,
 )
