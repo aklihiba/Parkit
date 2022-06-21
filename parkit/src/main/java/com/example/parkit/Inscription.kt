@@ -37,7 +37,7 @@ class Inscription : Fragment() {
         val pwd = binding.pwdPost.text
 
         binding.button.setOnClickListener{
-            if (nom.isNotBlank() and prenom.isNotBlank() and email.isNotBlank() and num.isNotBlank() and pwd.isNotBlank()) {
+            if (nom!!.isNotBlank() and prenom!!.isNotBlank() and email!!.isNotBlank() and num!!.isNotBlank() and pwd!!.isNotBlank()) {
                 var user = User(0,nom.toString(),prenom.toString(), email.toString(),num.toString(),"",pwd.toString())
                 inscription(user)
 

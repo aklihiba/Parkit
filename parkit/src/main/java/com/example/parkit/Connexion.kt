@@ -36,8 +36,8 @@ class Connexion : Fragment() {
             //TODO("personnalize empty fields warning and refactor for project")
             val mail = binding.editMail.text
             val mdp = binding.editPassword.text
-            TODO("regler cette chose")
-            if (mail.isNotBlank() and mdp.isNotBlank()) {
+           // TODO("regler cette chose")
+            if (mail!!.isNotBlank() and mdp!!.isNotBlank()) {
                 var user = User(0,"","", mail.toString(),"","",mdp.toString())
                 connexion(user)
 
