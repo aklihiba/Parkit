@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit_mail">editing the email fiels in your profile</string>
+    <string name="edit_name">editing the name in profile</string>
+    <string name="edit_num">editing the phone number in profile</string>
+</resources>
