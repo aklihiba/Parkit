@@ -7,14 +7,9 @@
 
     <fragment
         android:id="@+id/connexionFragment"
-        android:name="com.example.parkit.Connexion"
+        android:name="com.example.parkit.Authentification.Connexion"
         android:label="Connexion"
         tools:layout="@layout/fragment_connexion" >
-        <action
-            android:id="@+id/action_connexionFragment_to_reservationDetails"
-            app:destination="@id/reservationDetails"
-            app:popUpTo="@id/connexionFragment"
-            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_connexionFragment_to_inscription2"
             app:destination="@id/inscription2" />
@@ -34,9 +29,6 @@
         android:label="Detail Parking"
         tools:layout="@layout/fragment_details" >
         <action
-            android:id="@+id/action_details_to_connexionFragment"
-            app:destination="@id/connexionFragment" />
-        <action
             android:id="@+id/action_details_to_reservationDetails"
             app:destination="@id/reservationDetails" />
     </fragment>
@@ -49,14 +41,14 @@
         <action
             android:id="@+id/action_reservationDetails_to_fragmentParkings"
             app:destination="@id/fragmentParkings" />
+        <action
+            android:id="@+id/action_reservationDetails_to_connexionFragment2"
+            app:destination="@id/connexionFragment"
+            app:popUpTo="@id/details" />
     </fragment>
     <fragment
         android:id="@+id/inscription2"
-        android:name="com.example.parkit.Inscription"
+        android:name="com.example.parkit.Authentification.Inscription"
         android:label="inscription"
-        tools:layout="@layout/fragment_inscription" >
-        <action
-            android:id="@+id/action_inscription2_to_reservationDetails"
-            app:destination="@id/reservationDetails" />
-    </fragment>
+        tools:layout="@layout/fragment_inscription" />
 </navigation>

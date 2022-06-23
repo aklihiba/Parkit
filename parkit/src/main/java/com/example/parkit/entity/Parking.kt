@@ -6,18 +6,18 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "parkings")
 data class Parking(
     @PrimaryKey
-    val id:Int,
-    var image:String,
-    var latitude:Double,
-    var longitude: Double,
-    var etat:String,
-    var occupation: String,
-    var nom: String,
-    var adresse: String,
-    var distance:String,
-    var temps:String,
-    var note: Double,
-    var heure_ouverture: String,
-    var heure_fermeture: String,
-    var tarif:Double
+    val parkingId:Int,
+    val image:String,
+    val latitude:Double,
+    val longitude: Double,
+    val etat:String,
+    val occupation: String,
+    val nom: String,
+    val adresse: String,
+    val distance:String,
+    val temps:String,
+    val note: Double,
+    val heure_ouverture: String,
+    val heure_fermeture: String,
+    val tarif:Double
     )

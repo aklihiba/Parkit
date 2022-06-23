@@ -13,6 +13,8 @@ import androidx.navigation.findNavController
 import com.example.parkit.R
 import com.example.parkit.database.AppDatabase
 import com.example.parkit.databinding.FragmentReservationDetailsBinding
+import com.example.parkit.entity.Reservation
+import java.time.LocalDateTime
 
 
 class ReservationDetails : Fragment() {
@@ -28,6 +30,13 @@ class ReservationDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val pref by lazy { requireActivity().getSharedPreferences("parkitData", AppCompatActivity.MODE_PRIVATE) }
         super.onViewCreated(view, savedInstanceState)
+
+        val con = pref.getBoolean("connected", false)
+        if (!con)  {
+          view.findNavController().navigate(R.id.action_reservationDetails_to_connexionFragment2)
+
+        }
+
         binding.deconnect.setOnClickListener{
            pref.edit(){
                putBoolean("connected",false)
@@ -40,8 +49,8 @@ class ReservationDetails : Fragment() {
 
         val db = AppDatabase.buildDatabase(requireContext());
         val reservations = binding.reservations as TextView
-        reservations.text = db?.getReservationDao()?.getAllReservations().toString()
-
+        val reservation = db?.getReservationDao()?.getAllReservations().toString()
+        reservations.text = reservation?.toString()
 
     }
 }

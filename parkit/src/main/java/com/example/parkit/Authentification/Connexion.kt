@@ -1,4 +1,4 @@
-package com.example.parkit
+package com.example.parkit.Authentification
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.parkit.R
 import com.example.parkit.databinding.FragmentConnexionBinding
 import com.example.parkit.entity.User
 import com.example.parkit.retrofit.Endpoint
@@ -32,6 +33,9 @@ class Connexion : Fragment() {
         binding.progressB.visibility = View.INVISIBLE
 
         super.onViewCreated(view, savedInstanceState)
+
+
+        requireActivity().actionBar
         binding.connect.setOnClickListener {
             //TODO("personnalize empty fields warning and refactor for project")
             val mail = binding.editMail.text
@@ -123,8 +127,8 @@ class Connexion : Fragment() {
                                 putString("id", id)
                                 apply()
                             }
-                        //TODO change this to the pop and change the graph
-                        findNavController().navigate(R.id.action_connexionFragment_to_reservationDetails)
+                        findNavController().popBackStack(R.id.fragmentParkings, false)
+
                         }
                     } else {
                     Toast.makeText(
