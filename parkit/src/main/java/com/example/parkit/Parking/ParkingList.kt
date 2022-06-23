@@ -26,8 +26,6 @@ import kotlinx.coroutines.*
 
 class ParkingList : Fragment() {
     var mapView: MapView? = null
-
-
     val viewModel:ParkingViewModel by navGraphViewModels(R.id.fragmentParkings)
     private lateinit var binding: FragmentParkingListBinding
 
@@ -35,7 +33,7 @@ class ParkingList : Fragment() {
         binding = FragmentParkingListBinding.inflate(layoutInflater)
         val view = binding.root
         binding.progressB.visibility = View.INVISIBLE
-        var mapView = binding.mapView
+        mapView = binding.mapView
         mapView?.getMapboxMap()?.loadStyleUri("mapbox://styles/hiba-akli/cl37sgdw800e214p6u9lne2k8")
         return view
 
@@ -65,26 +63,6 @@ class ParkingList : Fragment() {
 
 
     }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        mapView?.onStart()
-//    }
-//
-//    override fun onStop() {
-//        super.onStop()
-//        mapView?.onStop()
-//    }
-//
-//    override fun onLowMemory() {
-//        super.onLowMemory()
-//        mapView?.onLowMemory()
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroy()
-//        mapView?.onDestroy()
-//    }
 
     fun loadParkings() {
         val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->

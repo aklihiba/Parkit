@@ -3,6 +3,7 @@ package com.example.parkit.retrofit
 
 import com.example.parkit.entity.Parking
 import com.example.parkit.entity.User
+import com.example.parkit.entity.rating
 import com.example.parkit.url
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -24,6 +25,9 @@ interface Endpoint {
 
    @GET("Utilisateur/{pk}")
    suspend fun getUser(@Path("pk") pk:Int):Response<User>
+
+   @POST("Rating/rateParking/")
+   suspend fun rateParking(@Body rating:rating): Response<String>
 
     companion object {
         @Volatile

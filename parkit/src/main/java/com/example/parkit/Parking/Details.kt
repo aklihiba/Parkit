@@ -15,9 +15,11 @@ import android.widget.RatingBar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.viewbinding.ViewBindings
+import androidx.work.*
 import com.bumptech.glide.Glide
 import com.example.parkit.R
 import com.example.parkit.database.AppDatabase
@@ -25,6 +27,7 @@ import com.example.parkit.databinding.FragmentDetailsBinding
 import com.example.parkit.entity.Parking
 import com.example.parkit.entity.Reservation
 import com.example.parkit.entity.rating
+import com.example.parkit.worker.synchroniseWorker
 import com.google.android.material.textfield.TextInputEditText
 import java.time.LocalDateTime.now
 
@@ -89,7 +92,7 @@ class Details : Fragment() {
 
             binding.rateFoaltButton.setOnClickListener{
                 var oldrate: rating?
-                oldrate = db?.getRatingDao()?.getrate( pref.getString("id", "")!!.toInt(), park.id)
+                oldrate = db?.getRatingDao()?.getrate( pref.getString("id", "")!!.toInt(), park.parkingId)
 
                 val rateview: View = LayoutInflater.from(requireContext()).inflate(R.layout.rate_dialog,null)
                 val builder = AlertDialog.Builder(requireContext())
@@ -112,27 +115,28 @@ class Details : Fragment() {
                     //save the rating in local with isSynch to false
 
                     if (oldrate != null){
-                        val newrate = rating(
-                            rateId = oldrate.rateId,
-                            userId = oldrate.userId,
-                            parkingId = park.id,
-                            comment = comment.toString(),
-                            rate = rating,
-                            isSync = false
-                        )
-
-                        db?.getRatingDao()?.update(newrate);
+                        oldrate.comment = comment.toString()
+                        oldrate.rate = rating
+                        oldrate.isSync = false
+                        db?.getRatingDao()?.update(oldrate);
                     }else{
                         val newrate = rating(
-                            userId =pref.getString("id", "")!!.toInt(),
-                            parkingId = park.id,
+                            user_Id =pref.getString("id", "")!!.toInt(),
+                            parking_Id = park.parkingId,
                             comment = comment.toString(),
                             rate = rating,
                             isSync = false
                         )
                         db?.getRatingDao()?.insertRating(newrate);
                     }
-
+                    println("before worker")
+                    //lancement du service de synchronisation
+                    val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
+                    val req = OneTimeWorkRequest.Builder(synchroniseWorker :: class.java).setConstraints(constraints).build()
+                    val workManager = WorkManager.getInstance(requireContext())
+                     workManager.enqueueUniqueWork("work"
+                        ,
+                        ExistingWorkPolicy.REPLACE,req)
                     // close dialog
                     ratedialog.dismiss()
                 }

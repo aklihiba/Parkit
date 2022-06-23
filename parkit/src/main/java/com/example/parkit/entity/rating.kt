@@ -8,9 +8,9 @@ import androidx.room.PrimaryKey
 class rating (
     @PrimaryKey(autoGenerate = true)
     val rateId:Int = 0,
-    @ColumnInfo(name = "userId") val userId:Int,
-    @ColumnInfo(name = "parkingId") val parkingId:Int,
-    @ColumnInfo(name="rate") val rate : Float,
-    @ColumnInfo(name = "comment") val comment : String? = "",
-    @ColumnInfo(name = "isSync") val isSync : Boolean? = false ,
+    @ColumnInfo(name = "user_Id") val user_Id:Int,
+    @ColumnInfo(name = "parking_Id") val parking_Id:Int,
+    @ColumnInfo(name="rate") var rate : Float,
+    @ColumnInfo(name = "comment") var comment : String? = "",
+    @ColumnInfo(name = "isSync") var isSync : Boolean? = false ,
 )

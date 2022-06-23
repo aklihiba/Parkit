@@ -49,8 +49,8 @@ class ReservationDetails : Fragment() {
 
         val db = AppDatabase.buildDatabase(requireContext());
         val reservations = binding.reservations as TextView
-        reservations.text = db?.getReservationDao()?.getAllReservations().toString()
-
+        val reservation = db?.getReservationDao()?.getAllReservations().toString()
+        reservations.text = reservation?.toString()
 
     }
 }

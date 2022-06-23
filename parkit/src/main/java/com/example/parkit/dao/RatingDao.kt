@@ -11,7 +11,7 @@ interface RatingDao:BaseDao<rating> {
     @Query("SELECT * FROM ratings")
     fun getAllRatings():List<rating>
 
-    @Query("SELECT * FROM ratings WHERE userId = :uid AND parkingId = :pid")
+    @Query("SELECT * FROM ratings WHERE user_Id = :uid AND parking_Id = :pid")
     fun getrate(uid:Int, pid:Int):rating
 
     @Query("SELECT * FROM ratings WHERE isSync = 0")
