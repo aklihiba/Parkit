@@ -13,7 +13,8 @@
         <action
             android:id="@+id/action_fragmentProfil_to_connexion"
             app:destination="@id/connexion"
-            app:popUpTo="@id/graph" />
+            app:popUpTo="@id/fragmentProfil"
+            app:popUpToInclusive="false" />
     </fragment>
 
     <fragment

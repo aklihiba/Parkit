@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "users")
 data class User(
     @PrimaryKey
-    val userId:Int,
-    val nom:String,
-    val prenom:String,
-    val email:String,
-    val tel:String,
-    val photo:String,
-    val mdp:String
+    var userId:Int,
+    var nom:String,
+    var prenom:String,
+    var email:String,
+    var tel:String,
+    var photo:String,
+    var mdp:String
 
 )

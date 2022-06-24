@@ -8,10 +8,7 @@ import com.example.parkit.url
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Endpoint {
 
@@ -25,6 +22,9 @@ interface Endpoint {
 
    @GET("Utilisateur/{pk}")
    suspend fun getUser(@Path("pk") pk:Int):Response<User>
+
+   @PUT("Utilisateur/{pk}/")
+   suspend fun updateProfil(@Path("pk") pk:Int, @Body profil:User):Response<User>
 
    @POST("Rating/rateParking/")
    suspend fun rateParking(@Body rating:rating): Response<String>
