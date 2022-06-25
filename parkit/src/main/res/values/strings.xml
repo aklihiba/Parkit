@@ -3,7 +3,4 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mapbox_access_token">sk.eyJ1IjoiaGliYS1ha2xpIiwiYSI6ImNsMzdzd3VicTIxMW8zbHF2MW1uZ2F0a2MifQ.MrmmwBJmH3h1mqfYT6DQpA</string>
-    <string name="edit_mail">editing the email fiels in your profile</string>
-    <string name="edit_name">editing the name in profile</string>
-    <string name="edit_num">editing the phone number in profile</string>
 </resources>
