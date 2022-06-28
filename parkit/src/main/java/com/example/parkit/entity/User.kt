@@ -13,6 +13,7 @@ data class User(
     var email:String,
     var tel:String,
     var photo:String,
-    var mdp:String
+    var mdp:String,
+    var google_uid:String
 
 )

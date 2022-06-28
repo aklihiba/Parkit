@@ -20,6 +20,9 @@ interface Endpoint {
    @POST("Utilisateur/")
    suspend fun inscription(@Body user:User): Response<String>
 
+   @POST("Utilisateur/googleSignIn/")
+   suspend fun googleSignIn(@Body user: User): Response<String>
+
    @GET("Utilisateur/{pk}")
    suspend fun getUser(@Path("pk") pk:Int):Response<User>
 

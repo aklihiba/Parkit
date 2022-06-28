@@ -29,7 +29,7 @@ class Profil : Fragment() {
 
     private lateinit var binding: FragmentProfilBinding
     private lateinit var profil:User
-    private lateinit var imageUri : Uri
+    private  var imageUri : Uri? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -149,44 +149,47 @@ class Profil : Fragment() {
                 AppCompatActivity.MODE_PRIVATE
             )
         }
-        val id = pref.getString("id","0")?.toInt()!!
-        val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
-            requireActivity().runOnUiThread {
-                binding.progressB.visibility = INVISIBLE
-                Toast.makeText(context, "Une erreur s'est produite", Toast.LENGTH_SHORT)
-                    .show()
+        if(pref.getBoolean("connected",false)){
+
+            val id = pref.getString("id","0")?.toInt()!!
+            val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+                requireActivity().runOnUiThread {
+                    binding.progressB.visibility = INVISIBLE
+                    Toast.makeText(context, "Une erreur s'est produite", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
             }
+            binding.progressB.visibility = View.VISIBLE
+            CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
+                val response = Endpoint.createEndpoint().getUser(id)
+                withContext(Dispatchers.Main) {
+                    binding.progressB.visibility = INVISIBLE
+                    if (response.isSuccessful && response.body() != null) {
+                        profil = response.body()!!
+                        binding.nom.text = profil.nom
+                        binding.email.text = profil.email
+                        binding.telephone.text = profil.tel
+                        binding.prenom.text = profil.prenom
 
-        }
-        binding.progressB.visibility = View.VISIBLE
-        CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = Endpoint.createEndpoint().getUser(id)
-            withContext(Dispatchers.Main) {
-                binding.progressB.visibility = INVISIBLE
-                if (response.isSuccessful && response.body() != null) {
-                    profil = response.body()!!
-                    binding.nom.text = profil.nom
-                    binding.email.text = profil.email
-                    binding.telephone.text = profil.tel
-                    binding.prenom.text = profil.prenom
-
-                    if (profil.photo != ""){
-                        val ref = FirebaseStorage.getInstance().getReference(profil.photo)
-                        val localfile = File.createTempFile("profilImpage","jpg")
-                        ref.getFile(localfile).addOnSuccessListener {
-                            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-                            binding.profilImage.setImageBitmap(bitmap)
-                        }.addOnFailureListener {
-                            Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT)
-                                .show()
+                        if (profil.photo != ""){
+                            val ref = FirebaseStorage.getInstance().getReference(profil.photo)
+                            val localfile = File.createTempFile("profilImpage","jpg")
+                            ref.getFile(localfile).addOnSuccessListener {
+                                val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+                                binding.profilImage.setImageBitmap(bitmap)
+                            }.addOnFailureListener {
+                                Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
                         }
+                    } else {
+                        Toast.makeText(
+                            requireActivity(),
+                            "response not successful",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                } else {
-                    Toast.makeText(
-                        requireActivity(),
-                        "response not successful",
-                        Toast.LENGTH_SHORT
-                    ).show()
                 }
             }
         }
@@ -232,7 +235,7 @@ class Profil : Fragment() {
                                 .show()
                         }
                     }else{
-                        binding.profilImage.setImageDrawable(getResources().getDrawable(R.drawable.parking4))
+                        binding.profilImage.setImageDrawable(getResources().getDrawable(R.drawable.profile))
                     }
 
                 } else {
@@ -261,7 +264,7 @@ class Profil : Fragment() {
         val filename = profil.email
         profil.photo = "users/$filename.jpg"
         val storageReference = FirebaseStorage.getInstance().getReference(profil.photo)
-        storageReference.putFile(imageUri).
+        storageReference.putFile(imageUri!!).
                 addOnSuccessListener {
                     updateProfil(profil)
 

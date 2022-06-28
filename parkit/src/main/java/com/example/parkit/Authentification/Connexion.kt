@@ -77,7 +77,7 @@ class Connexion : Fragment() {
             val mdp = binding.editPassword.text
 
             if (mail!!.isNotBlank() && mdp!!.isNotBlank() ) {
-                var user = User(0,"","", mail.toString(),"","",mdp.toString())
+                var user = User(0,"","", mail.toString(),"","",mdp.toString(),"")
                 connexion(user)
 
                 /*if ((mail.toString() == "test@gmail.com") and (mdp.toString() == "test"))
@@ -208,29 +208,21 @@ class Connexion : Fragment() {
         firebaseAuth.signInWithCredential(credential)
             .addOnSuccessListener { authResult ->
                 val firebaseUser = firebaseAuth.currentUser
-                var user = User(0,"","","","","","")
+                var user = User(0,"","","","","","",  "")
                 val metadata = firebaseUser?.metadata
                 firebaseUser!!.let {
                     user.email = it.email.toString()
                     user.nom = it.displayName.toString()
                     user.tel = it.phoneNumber.toString()
+                    user.google_uid = it.uid
+
+                    googleSignInRest(user)
 
                     pref.edit() {
-                        putBoolean("connected", true)
                         putString("email", user.email)
-                        putString("pwd" , user.mdp)
-                        putString("id", it.uid)
                         apply()
                     }
-                    binding.progressB.visibility = View.INVISIBLE
-
                 }
-                if(metadata?.creationTimestamp == metadata?.lastSignInTimestamp){
-                    inscription(user)
-                }
-                //TODO connexion avc google uid: use a special get method
-                findNavController().popBackStack(R.id.fragmentParkings, false)
-
             }
             .addOnFailureListener{
                 Toast.makeText(
@@ -241,7 +233,7 @@ class Connexion : Fragment() {
             }
     }
 
-    fun inscription(user: User){
+    fun googleSignInRest(user: User){
 
         val pref by lazy {
             requireActivity().getSharedPreferences(
@@ -259,30 +251,26 @@ class Connexion : Fragment() {
         }
         binding.progressB.visibility = View.VISIBLE
         CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = Endpoint.createEndpoint().inscription(user)
+            val response = Endpoint.createEndpoint().googleSignIn(user)
             withContext(Dispatchers.Main) {
                 binding.progressB.visibility = View.INVISIBLE
-                if ( response.isSuccessful && response.body() != null) {
-                    if (response.body()!!.toInt() == 200) {
+                if ( response.body() != null) {
+                    if (response.body() == "400") {
+                        Toast.makeText(requireActivity(), "erreur du serveur", Toast.LENGTH_SHORT)
+                            .show()
+                    } else {
+                        var id = response.body().toString()!!
 
                         pref.edit() {
                             putBoolean("connected", true)
-                            putString("email", user.email.toString())
-                            putString("pwd" , user.mdp.toString())
-
+                            putString("id", id)
                             apply()
                         }
-                        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object:
-                            OnBackPressedCallback(true){
-                            override fun handleOnBackPressed() {
-                                findNavController().popBackStack(R.id.fragmentParkings, false)
-                            }
-
-                        })
+                        findNavController().popBackStack(R.id.fragmentParkings, false)
                     }
                 } else {
                     Toast.makeText(
-                        activity,
+                        requireActivity(),
                         "response not successful",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -291,5 +279,6 @@ class Connexion : Fragment() {
         }
 
     }
+
 }
 
