@@ -21,7 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.AdditionalUserInfo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.*
@@ -44,11 +43,11 @@ class Connexion : Fragment() {
         binding = FragmentConnexionBinding.inflate(layoutInflater)
         val view = binding.root
 
+
         //confiure the google SignIn
         val googleSingInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
-            .requestProfile()
             .build()
         googleSingInClient = GoogleSignIn.getClient(requireActivity(), googleSingInOptions)
 
@@ -189,20 +188,23 @@ class Connexion : Fragment() {
             val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
             try{
                 val account = accountTask.getResult(ApiException::class.java)
+                if( account != null)
+                    binding.progressB.visibility = View.VISIBLE
                 firebaseAuthWithGoogleAccount(account)
-            }catch(e:Exception){
 
+            }catch(e:ApiException){
+                Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }
-    private fun  firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?){
+    private fun  firebaseAuthWithGoogleAccount(account: GoogleSignInAccount){
         val pref by lazy {
             requireActivity().getSharedPreferences(
                 "parkitData",
                 AppCompatActivity.MODE_PRIVATE
             )
         }
-        val credential = GoogleAuthProvider.getCredential(account!!.idToken, null)
+        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebaseAuth.signInWithCredential(credential)
             .addOnSuccessListener { authResult ->
                 val firebaseUser = firebaseAuth.currentUser
@@ -220,12 +222,22 @@ class Connexion : Fragment() {
                         putString("id", it.uid)
                         apply()
                     }
-                    findNavController().popBackStack(R.id.fragmentParkings, false)
+                    binding.progressB.visibility = View.INVISIBLE
 
                 }
                 if(metadata?.creationTimestamp == metadata?.lastSignInTimestamp){
                     inscription(user)
                 }
+                //TODO connexion avc google uid: use a special get method
+                findNavController().popBackStack(R.id.fragmentParkings, false)
+
+            }
+            .addOnFailureListener{
+                Toast.makeText(
+                    requireActivity(),
+                    "failed connexion",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
     }
 
@@ -270,7 +282,7 @@ class Connexion : Fragment() {
                     }
                 } else {
                     Toast.makeText(
-                        requireActivity(),
+                        activity,
                         "response not successful",
                         Toast.LENGTH_SHORT
                     ).show()

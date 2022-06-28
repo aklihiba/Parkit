@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parkit.R
 import com.example.parkit.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
          NavigationUI.setupActionBarWithNavController(this,navMenuController,binding.drawerLayout)
         NavigationUI.setupWithNavController(binding.navView,navMenuController)
 
-
+        FirebaseApp.initializeApp(this)
 
 //        val navHostFragment2 = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 //        navController = navHostFragment2.navController
