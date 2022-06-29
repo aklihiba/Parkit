@@ -33,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:backgroundTint="@color/bg"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_menu"
         />

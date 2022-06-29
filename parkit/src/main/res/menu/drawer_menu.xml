@@ -21,5 +21,13 @@
         android:icon="@drawable/ic_reservations"
         android:title="Mes reservations"
         android:visible="true" />
+    <item
+        android:id="@+id/fragment_deconnexion"
+        android:enabled="true"
+        android:icon="@drawable/ic_directions_run"
+        android:title="Déconnexion"
+        android:visible="true"
+
+        />
 
 </menu>

@@ -42,5 +42,10 @@
         android:name="com.example.parkit.Authentification.Inscription"
         android:label="inscription"
         tools:layout="@layout/fragment_inscription" />
+    <fragment
+        android:id="@+id/fragment_deconnexion"
+        android:name="com.example.parkit.Authentification.deconnexion"
+        android:label="fragment_deconnexion"
+        tools:layout="@layout/fragment_deconnexion" />
 
 </navigation>
