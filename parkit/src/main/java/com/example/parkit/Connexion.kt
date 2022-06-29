@@ -119,17 +119,17 @@ class Connexion : Fragment() {
                     } else {
                         var id = response.body().toString()!!
 
-                            pref.edit() {
-                                putBoolean("connected", true)
-                                putString("email", user.email.toString())
-                                putString("pwd" , user.mdp.toString())
-                                putString("id", id)
-                                apply()
-                            }
+                        pref.edit() {
+                            putBoolean("connected", true)
+                            putString("email", user.email.toString())
+                            putString("pwd" , user.mdp.toString())
+                            putString("id", id)
+                            apply()
+                        }
                         findNavController().popBackStack(R.id.fragmentParkings, false)
 
-                        }
-                    } else {
+                    }
+                } else {
                     Toast.makeText(
                         requireActivity(),
                         "response not successful",
@@ -142,4 +142,3 @@ class Connexion : Fragment() {
     }
 
 }
-

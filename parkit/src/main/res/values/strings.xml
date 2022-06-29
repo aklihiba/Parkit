@@ -3,4 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mapbox_access_token">sk.eyJ1IjoiaGliYS1ha2xpIiwiYSI6ImNsMzdzd3VicTIxMW8zbHF2MW1uZ2F0a2MifQ.MrmmwBJmH3h1mqfYT6DQpA</string>
+    <string name="user_location_permission_explanation">This app need location permissions to show its functionality</string>>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions</string>
 </resources>
