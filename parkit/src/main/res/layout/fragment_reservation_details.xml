@@ -12,32 +12,233 @@
         android:id="@+id/Titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Mes Reservations"
-        android:textColor="@color/gris_clair"
+        android:layout_marginTop="10dp"
+        android:text="Reservation d'une place chez"
+        android:textColor="@color/white"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/reservations"
+        android:id="@+id/parking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text=" "
-        android:textColor="@color/gris_clair"
+        android:layout_marginTop="50dp"
+        android:text="parking p14"
+        android:textColor="@color/yellow"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/deconnect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:text="Deconnexion"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pickerEntree"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_tile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parking">
+
+        <TextView
+            android:id="@+id/titreEntree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="Date et heure d'entrée"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/entete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="   mois       jours    année    heure     minute"
+            android:textColor="@color/gris"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titreEntree" />
+
+        <DatePicker
+            android:id="@+id/datePickerEntree"
+            android:layout_width="219dp"
+            android:layout_height="200dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titreEntree" />
+
+        <TimePicker
+            android:id="@+id/timePickerEntree"
+            android:layout_width="220dp"
+            android:layout_height="199dp"
+            android:layout_centerHorizontal="true"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:timePickerMode="spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/titreEntree" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pickerSortie"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_tile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickerEntree">
+
+        <TextView
+            android:id="@+id/titreSortie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="Date et heure de sortie"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/entete2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="   mois       jours    année    heure     minute"
+            android:textColor="@color/gris"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titreSortie" />
+
+        <DatePicker
+            android:id="@+id/datePickerSortie"
+            android:layout_width="219dp"
+            android:layout_height="200dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titreSortie" />
+
+        <TimePicker
+            android:id="@+id/timePickerSortie"
+            android:layout_width="220dp"
+            android:layout_height="199dp"
+            android:layout_centerHorizontal="true"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:timePickerMode="spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/titreSortie" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarifcard"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_tile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickerSortie">
+
+        <TextView
+            android:id="@+id/tarif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Tarif"
+            android:textColor="@color/gris_clair"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tarifcard" />
+
+        <TextView
+            android:id="@+id/nbHeure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="2 heures"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tarif" />
+        <TextView
+            android:id="@+id/prix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="200.0 DA"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tarif" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/valider"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button"
+        android:text="valider"
+        android:backgroundTint="@color/yellow"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:cornerRadius="25dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tarifcard" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

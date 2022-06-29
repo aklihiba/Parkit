@@ -34,23 +34,8 @@ class ReservationDetails : Fragment() {
         val con = pref.getBoolean("connected", false)
         if (!con)  {
           view.findNavController().navigate(R.id.action_reservationDetails_to_connexionFragment2)
-
         }
 
-        binding.deconnect.setOnClickListener{
-           pref.edit(){
-               putBoolean("connected",false)
-               apply()
-           }
-
-            it.findNavController().navigate(R.id.action_reservationDetails_to_fragmentParkings)
-
-        }
-
-        val db = AppDatabase.buildDatabase(requireContext());
-        val reservations = binding.reservations as TextView
-        val reservation = db?.getReservationDao()?.getAllReservations().toString()
-        reservations.text = reservation?.toString()
 
     }
 }
