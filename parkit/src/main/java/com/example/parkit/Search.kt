@@ -47,7 +47,9 @@ class Search : Fragment() {
                     // and populate the form with the address components
                     Log.d(TAG, "Place: " + place.addressComponents)
                     val rech = Recherche(0,place.latLng.latitude,place.latLng.longitude,0.0,0.0)
+                    binding.address1Field.setText(place.address)
                     loadfilteredParkings(rech)
+
                 }
             } else if (result.getResultCode() === Activity.RESULT_CANCELED) {
                 // The user canceled the operation.
@@ -79,7 +81,7 @@ class Search : Fragment() {
         )
 
         // Build the autocomplete intent with field, country, and type filters applied
-        val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
+        val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields)
             .setCountry("DZ")
             .setTypeFilter(TypeFilter.ADDRESS)
             .build(requireContext())
