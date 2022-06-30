@@ -6,6 +6,27 @@
     app:startDestination="@id/fragmentParkings">
 
     <fragment
+        android:id="@+id/search"
+        android:name="com.example.parkit.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <action
+        android:id="@+id/action_parkingList_to_search"
+        app:destination="@id/search" />
+    <fragment
+        android:id="@+id/parkingList"
+        android:name="com.example.parkit.Parking.ParkingList"
+        android:label="fragment_parking_list"
+        tools:layout="@layout/fragment_parking_list">
+        <action
+            android:id="@+id/action_parkingList_to_search"
+            app:destination="@id/search" />
+    </fragment>
+    <fragment
         android:id="@+id/connexionFragment"
         android:name="com.example.parkit.Connexion"
         android:label="Connexion"

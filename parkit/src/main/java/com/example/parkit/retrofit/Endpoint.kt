@@ -2,6 +2,7 @@ package com.example.parkit.retrofit
 
 
 import com.example.parkit.entity.Parking
+import com.example.parkit.entity.Recherche
 import com.example.parkit.entity.User
 import com.example.parkit.url
 import retrofit2.Response
@@ -25,13 +26,15 @@ interface Endpoint {
    @GET("Utilisateur/{pk}")
    suspend fun getUser(@Path("pk") pk:Int):Response<User>
 
+   @POST("Parkings/Recherche/")
+   suspend fun getNearbyParks(@Body recherche: Recherche) : Response<List<Parking>>
+
     companion object {
         @Volatile
         var endpoint: Endpoint? = null
         fun createEndpoint(): Endpoint {
             if(endpoint ==null) {
                 synchronized(this) {
-                   // TODO("mettre l'url publique du server")
                     endpoint = Retrofit.Builder().baseUrl(url)
                         .addConverterFactory(GsonConverterFactory.create()).build()
                         .create(Endpoint::class.java)

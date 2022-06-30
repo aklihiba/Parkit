@@ -1,27 +1,17 @@
 package com.example.parkit.Parking
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
-import com.mapbox.geojson.Point
-import com.mapbox.maps.plugin.annotation.annotations
-import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions
-import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.load.engine.Resource
 import com.example.parkit.Adapter
 import com.example.parkit.R
 import com.example.parkit.databinding.FragmentParkingListBinding
@@ -31,18 +21,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.mapbox.android.gestures.MoveGestureDetector
 import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.MapView
-import com.mapbox.maps.Style
 import com.mapbox.maps.extension.style.expressions.dsl.generated.interpolate
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.image
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.linear
-import com.mapbox.maps.extension.style.layers.generated.symbolLayer
-import com.mapbox.maps.extension.style.layers.properties.generated.IconAnchor
-import com.mapbox.maps.extension.style.sources.generated.geoJsonSource
-import com.mapbox.maps.extension.style.style
 import com.mapbox.maps.plugin.LocationPuck2D
-import com.mapbox.maps.plugin.Plugin
-import com.mapbox.maps.plugin.annotation.generated.CircleAnnotationOptions
-import com.mapbox.maps.plugin.annotation.generated.createCircleAnnotationManager
 import com.mapbox.maps.plugin.gestures.OnMoveListener
 import com.mapbox.maps.plugin.gestures.gestures
 import com.mapbox.maps.plugin.locationcomponent.OnIndicatorBearingChangedListener
@@ -52,11 +32,6 @@ import kotlinx.coroutines.*
 import java.lang.ref.WeakReference
 
 class ParkingList : Fragment() {
-    private  val BLUE_ICON_ID = "blue"
-    private  val SOURCE_ID = "source_id"
-    private  val LAYER_ID = "layer_id"
-    private  val LATITUDE = 55.665957
-    private val LONGITUDE = 12.550343
     private lateinit var mapView: MapView
     private lateinit var locationPermissionHelper: LocationPermissionHelper
     private val onIndicatorBearingChangedListener = OnIndicatorBearingChangedListener {
@@ -90,20 +65,6 @@ class ParkingList : Fragment() {
         locationPermissionHelper.checkPermissions {
             onMapReady()
         }
-        // Create an instance of the Annotation API and get the PointAnnotationManager.
-        val annotationApi = mapView.annotations
-        val circleAnnotationManager = annotationApi?.createCircleAnnotationManager(mapView)
-// Set options for the resulting circle layer.
-        val circleAnnotationOptions: CircleAnnotationOptions = CircleAnnotationOptions()
-            // Define a geographic coordinate.
-            .withPoint(Point.fromLngLat(36.7529126,3.1875092))
-            // Style the circle that will be added to the map.
-            .withCircleRadius(8.0)
-            .withCircleColor("#F08080")
-            .withCircleStrokeWidth(2.0)
-            .withCircleStrokeColor("#ffffff")
-// Add the resulting circle to the map.
-        circleAnnotationManager?.create(circleAnnotationOptions)
 
     }
 
@@ -120,6 +81,7 @@ class ParkingList : Fragment() {
 
 
     }
+
 
     fun loadParkings() {
         val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
@@ -169,6 +131,11 @@ class ParkingList : Fragment() {
             binding.recyclerView.adapter = Adapter(requireActivity(),viewModel.list)
         }
 
+
+        binding.gosearch.setOnClickListener{
+    it.findNavController().navigate(R.id.action_parkingList_to_search)
+
+}
 
     }
 
