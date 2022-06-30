@@ -46,7 +46,11 @@ class Search : Fragment() {
                     // Write a method to read the address components from the Place
                     // and populate the form with the address components
                     Log.d(TAG, "Place: " + place.addressComponents)
-                    val rech = Recherche(0,place.latLng.latitude,place.latLng.longitude,0.0,0.0)
+                    val maxP = binding.maxPrix.text
+                    val prixmax =  if(binding.maxPrix.text.isNotBlank())  maxP.toString().toDouble() else  0.0
+                    val maxD = binding.maxDist.text
+                    val distmax =  if(binding.maxPrix.text.isNotBlank())  maxD.toString().toDouble() else  0.0
+                    val rech = Recherche(0,place.latLng.latitude,place.latLng.longitude,prixmax,distmax)
                     binding.address1Field.setText(place.address)
                     loadfilteredParkings(rech)
 
@@ -83,8 +87,7 @@ class Search : Fragment() {
         // Build the autocomplete intent with field, country, and type filters applied
         val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields)
             .setCountry("DZ")
-            .setTypeFilter(TypeFilter.ADDRESS)
-            .build(requireContext())
+            .build(requireActivity())
         startAutocomplete.launch(intent)
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?
@@ -134,8 +137,14 @@ class Search : Fragment() {
             withContext(Dispatchers.Main) {
                 binding.progBar.visibility = View.INVISIBLE
                 if (response.isSuccessful && response.body() != null) {
-                    viewModel.list = response.body()!!.toMutableList()
-                    binding.recyclerFiltre.adapter = Adapter(requireActivity(), viewModel.list)
+                    if (response.body()!!.isEmpty()){
+                        Toast.makeText(requireActivity(), "LA LISTE EST VIDE", Toast.LENGTH_LONG).show()
+
+                    } else{
+
+                        viewModel.list = response.body()!!.toMutableList()
+                        binding.recyclerFiltre.adapter = Adapter(requireActivity(), viewModel.list)
+                    }
                 } else {
 
                     Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
@@ -167,6 +176,7 @@ class Search : Fragment() {
 
         }
         else {
+            binding.progBar.visibility = View.INVISIBLE
             binding.recyclerFiltre.adapter = Adapter(requireActivity(),viewModel.list)
         }
 
