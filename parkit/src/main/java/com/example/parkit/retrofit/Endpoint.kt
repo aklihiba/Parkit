@@ -2,6 +2,7 @@ package com.example.parkit.retrofit
 
 
 import com.example.parkit.entity.Parking
+import com.example.parkit.entity.Reservation
 import com.example.parkit.entity.User
 import com.example.parkit.entity.rating
 import com.example.parkit.url
@@ -31,6 +32,10 @@ interface Endpoint {
 
    @POST("Rating/rateParking/")
    suspend fun rateParking(@Body rating:rating): Response<String>
+
+   @POST("Reservation/")
+   suspend fun reserver(@Body reservation: Reservation):Response<Reservation>
+
 
     companion object {
         @Volatile

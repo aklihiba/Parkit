@@ -19,5 +19,6 @@ data class Parking(
     val note: Double,
     val heure_ouverture: String,
     val heure_fermeture: String,
-    val tarif:Double
+    val tarif:Double,
+    val nombre_places:Int
     )

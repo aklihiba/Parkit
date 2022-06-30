@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="DateTimePicker" >
+        <item name="colorAccent">@color/yellow</item>                   <!--header background-->
+        <item name="android:windowBackground">@color/bg</item>     <!--calendar background-->
+        <item name="android:colorControlActivated">@color/yellow</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/gris_clair</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/gris_clair</item>    <!--days of the week-->
+        <item name="android:colorFocusedHighlight">@color/yellow</item>
+
+    </style>
 </resources>

@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.viewbinding.ViewBindings
@@ -70,16 +71,8 @@ class Details : Fragment() {
             (park.tarif.toString() + "DZD").also { binding.prix.text = it }
 
             binding.reserver.setOnClickListener() {
-
-                    // sauvgarde de la reservation
-                    val db = AppDatabase.buildDatabase(requireContext());
-                   /* val res = Reservation(parkingId = selectedPosition,parkingName = park.nom, userId = pref.getString("id", "")!!.toInt(),
-                        hEntree = now().dayOfMonth.toString())
-                    db?.getReservationDao()?.insertreservation(res);
-
-
-                    */
-                    it.findNavController().navigate(R.id.action_details_to_reservationDetails)
+                    val bundle = bundleOf("position" to selectedPosition)
+                    it.findNavController().navigate(R.id.action_details_to_reservationDetails, bundle)
 
             }
             }

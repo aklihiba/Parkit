@@ -12,6 +12,7 @@ import com.example.parkit.entity.rating
 
 
 @Database(entities = [Reservation::class, rating::class],version=1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDatabase:RoomDatabase() {
 //    @TypeConverters(Converters::class)
 

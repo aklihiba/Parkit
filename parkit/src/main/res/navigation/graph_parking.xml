@@ -45,10 +45,18 @@
             android:id="@+id/action_reservationDetails_to_connexionFragment2"
             app:destination="@id/connexionFragment"
             app:popUpTo="@id/details" />
+        <action
+            android:id="@+id/action_reservationDetails_to_mesReservationDetails"
+            app:destination="@id/mesReservationDetails" />
     </fragment>
     <fragment
         android:id="@+id/inscription2"
         android:name="com.example.parkit.Authentification.Inscription"
         android:label="inscription"
         tools:layout="@layout/fragment_inscription" />
+    <fragment
+        android:id="@+id/mesReservationDetails"
+        android:name="com.example.parkit.Parking.MesReservationDetails"
+        android:label="fragment_mes_reservation_details"
+        tools:layout="@layout/fragment_mes_reservation_details" />
 </navigation>
