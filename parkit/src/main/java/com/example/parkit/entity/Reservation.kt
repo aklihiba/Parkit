@@ -10,13 +10,13 @@ import java.util.*
 
 )
 data class Reservation(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     val reservationId:Int = 0,
     @ColumnInfo(name = "user_Id") val user_Id:Int,
     @ColumnInfo(name = "parking_Id") val parking_Id:Int,
     @ColumnInfo(name="parkingName") val parkingName: String,
-    @ColumnInfo(name = "hEntree") val hEntree: Date,
-    @ColumnInfo(name = "hSortie") val hSortie: Date,
+    @ColumnInfo(name = "hEntree") val hEntree: String,
+    @ColumnInfo(name = "hSortie") val hSortie: String,
     @ColumnInfo(name = "num_place") val num_place: Int = 0,
     @ColumnInfo(name = "prix") val prix: Double?=0.0
 )

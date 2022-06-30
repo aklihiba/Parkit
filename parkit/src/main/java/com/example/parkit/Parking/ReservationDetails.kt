@@ -110,7 +110,7 @@ class ReservationDetails : Fragment() {
                     val reservation = Reservation(
                         reservationId= 0,
                         user_Id =userid, parking_Id = park.parkingId,
-                        parkingName = park.nom, hEntree = hEntree, hSortie = hSortie,
+                        parkingName = park.nom, hEntree = hEntree.toString(), hSortie = hSortie.toString(),
                         prix = prix.toDouble(), num_place =  Random().nextInt(park.nombre_places))
                     reserver(reservation)
                     val db = AppDatabase.buildDatabase(requireContext());
@@ -129,7 +129,7 @@ class ReservationDetails : Fragment() {
 
     private fun updateDateInView() {
         val myFormat = "dd/MM/yyyy" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        val sdf = SimpleDateFormat(myFormat, Locale.FRANCE)
         binding.date.text = sdf.format(cal.getTime())
     }
 
